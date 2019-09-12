@@ -233,7 +233,7 @@ export default function ResponsiveNavigation(props) {
       <Toolbar />
       <Container className={classes.container}>
         {props.containers.map((value, index) => {
-          return value();
+          return <div id={index}>{value()}</div>
         })}
       </Container>
     </React.Fragment>
