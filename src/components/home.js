@@ -50,7 +50,7 @@ export default function Home(props) {
   const classes = styles();
 
   return (
-    <Container className={classes.container}>
+    <Container id="home" className={classes.container}>
       <div className={classes.spacing}>
         <Paper className={classes.paper}>
           <Grid

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import customTheme from '../theme/theme.js';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
   Drawer,
@@ -10,7 +11,6 @@ import {
   IconButton,
   ListItem,
   ListItemText,
-  ListItemIcon,
   AppBar,
   Toolbar,
   CssBaseline,
@@ -18,19 +18,13 @@ import {
   Container,
   Slide
 } from '@material-ui/core';
-import {
-  Menu,
-  ChevronLeft,
-  ChevronRight,
-  DescriptionRounded,
-  ListAltRounded,
-  InfoRounded,
-  ContactMailRounded
-} from '@material-ui/icons';
+import { Menu, ChevronLeft, ChevronRight } from '@material-ui/icons';
 
 function HideOnScroll(props) {
   const { children, window } = props;
-  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined
+  });
   return (
     <Slide appear={false} direction='down' in={!trigger}>
       {children}
@@ -44,6 +38,7 @@ HideOnScroll.propTypes = {
 };
 
 const drawerWidth = 240;
+
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1
@@ -98,7 +93,9 @@ const useStyles = makeStyles(theme => ({
     flexShrink: 0
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    backgroundColor: customTheme.colors.background,
+    color: customTheme.colors.font_onBackground
   },
   drawerHeader: {
     display: 'flex',
@@ -106,6 +103,9 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end'
+  },
+  chevronColor: {
+    color: customTheme.colors.font_onBackground
   },
   content: {
     flexGrow: 1,
@@ -126,6 +126,21 @@ const useStyles = makeStyles(theme => ({
   container: {
     height: '300vh',
     backgroundColor: customTheme.colors.background
+  },
+  anchor: {
+    color: 'inherit',
+    textDecoration: 'none'
+  },
+  logo: {
+    '&:hover': {
+      filter: 'brightness(2)'
+    }
+  },
+  listItem: {
+    '&:hover': {
+      backgroundColor: 'inherit',
+      color: customTheme.colors.primary
+    }
   }
 }));
 
@@ -154,36 +169,24 @@ export default function ResponsiveNavigation(props) {
       <div className={classes.drawerHeader}>
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === 'ltr' ? (
-            <ChevronLeft />
+            <ChevronLeft className={classes.chevronColor} />
           ) : (
-            <ChevronRight />
+            <ChevronRight className={classes.chevronColor} />
           )}
         </IconButton>
       </div>
       <Divider />
       <List>
         <ListItem button key='About'>
-          <ListItemIcon>
-            <InfoRounded />
-          </ListItemIcon>
           <ListItemText primary='About' />
         </ListItem>
         <ListItem button key='Projects'>
-          <ListItemIcon>
-            <ListAltRounded />
-          </ListItemIcon>
           <ListItemText primary='Projects' />
         </ListItem>
         <ListItem button key='Contact'>
-          <ListItemIcon>
-            <ContactMailRounded />
-          </ListItemIcon>
           <ListItemText primary='Contact' />
         </ListItem>
         <ListItem button key='Resume'>
-          <ListItemIcon>
-            <DescriptionRounded />
-          </ListItemIcon>
           <ListItemText primary='Resume' />
         </ListItem>
       </List>
@@ -211,20 +214,37 @@ export default function ResponsiveNavigation(props) {
                 </IconButton>
               ) : null}
             </div>
+            <AnchorLink className={[classes.anchor]} href='#home' offset={150}>
+              <img className={classes.logo} src='/assets/favicon.ico' />
+            </AnchorLink>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <ListItem button key='About'>
-                <ListItemText primary='About' />
-              </ListItem>
-              <ListItem button key='Contact'>
-                <ListItemText primary='Contact' />
-              </ListItem>
-              <ListItem button key='Projects'>
-                <ListItemText primary='Projects' />
-              </ListItem>
-              <ListItem button key='Resume'>
-                <ListItemText primary='Resume' />
-              </ListItem>
+              <AnchorLink className={classes.anchor} href='#about' offset={150}>
+                <ListItem className={classes.listItem} button key='About'>
+                  <ListItemText primary='About' />
+                </ListItem>
+              </AnchorLink>
+              <AnchorLink
+                className={classes.anchor}
+                href='#projects'
+                offset={150}>
+                <ListItem className={classes.listItem} button key='Projects'>
+                  <ListItemText primary='Projects' />
+                </ListItem>
+              </AnchorLink>{' '}
+              <AnchorLink
+                className={classes.anchor}
+                href='#contact'
+                offset={150}>
+                <ListItem className={classes.listItem} button key='Contact'>
+                  <ListItemText primary='Contact' />
+                </ListItem>
+              </AnchorLink>{' '}
+              <a className={classes.anchor} href='/resume.pdf' target='_blank'>
+                <ListItem className={classes.listItem} button key='Resume'>
+                  <ListItemText primary='Resume' />
+                </ListItem>
+              </a>
             </div>
           </Toolbar>
           {renderDrawer}
@@ -233,7 +253,7 @@ export default function ResponsiveNavigation(props) {
       <Toolbar />
       <Container className={classes.container}>
         {props.containers.map((value, index) => {
-          return <div id={index}>{value()}</div>
+          return <div id={index}>{value()}</div>;
         })}
       </Container>
     </React.Fragment>

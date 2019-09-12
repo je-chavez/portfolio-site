@@ -29,7 +29,7 @@ export default function About(props) {
   const classes = styles();
 
   return (
-    <Container className={classes.container}>
+    <Container id="about" className={classes.container}>
       <Paper className={classes.paper}>
         <div>
           <img
