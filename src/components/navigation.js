@@ -1,32 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Container from '@material-ui/core/Container';
-import Slide from '@material-ui/core/Slide';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import customTheme from '../theme/theme.js';
-
-//For drawer
-import MenuIcon from '@material-ui/icons/Menu';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import IconButton from '@material-ui/core/IconButton';
-
-//Appbar buttons
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import DescriptionRoundedIcon from '@material-ui/icons/DescriptionRounded';
-import ListAltRoundedIcon from '@material-ui/icons/ListAltRounded';
-import InfoRoundedIcon from '@material-ui/icons/InfoRounded';
-import ContactMailRoundedIcon from '@material-ui/icons/ContactMailRounded';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {
+  Drawer,
+  List,
+  Divider,
+  IconButton,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  useScrollTrigger,
+  Container,
+  Slide
+} from '@material-ui/core';
+import {
+  Menu,
+  ChevronLeft,
+  ChevronRight,
+  DescriptionRounded,
+  ListAltRounded,
+  InfoRounded,
+  ContactMailRounded
+} from '@material-ui/icons';
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -125,7 +125,7 @@ const useStyles = makeStyles(theme => ({
   },
   container: {
     height: '300vh',
-    backgroundColor: '#eaeaea'
+    backgroundColor: customTheme.colors.background
   }
 }));
 
@@ -154,9 +154,9 @@ export default function ResponsiveNavigation(props) {
       <div className={classes.drawerHeader}>
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === 'ltr' ? (
-            <ChevronLeftIcon />
+            <ChevronLeft />
           ) : (
-            <ChevronRightIcon />
+            <ChevronRight />
           )}
         </IconButton>
       </div>
@@ -164,25 +164,25 @@ export default function ResponsiveNavigation(props) {
       <List>
         <ListItem button key='About'>
           <ListItemIcon>
-            <InfoRoundedIcon />
+            <InfoRounded />
           </ListItemIcon>
           <ListItemText primary='About' />
         </ListItem>
         <ListItem button key='Projects'>
           <ListItemIcon>
-            <ListAltRoundedIcon />
+            <ListAltRounded />
           </ListItemIcon>
           <ListItemText primary='Projects' />
         </ListItem>
         <ListItem button key='Contact'>
           <ListItemIcon>
-            <ContactMailRoundedIcon />
+            <ContactMailRounded />
           </ListItemIcon>
           <ListItemText primary='Contact' />
         </ListItem>
         <ListItem button key='Resume'>
           <ListItemIcon>
-            <DescriptionRoundedIcon />
+            <DescriptionRounded />
           </ListItemIcon>
           <ListItemText primary='Resume' />
         </ListItem>
@@ -207,7 +207,7 @@ export default function ResponsiveNavigation(props) {
                   onClick={handleDrawerOpen}
                   color='inherit'
                   aria-label='open drawer'>
-                  <MenuIcon />
+                  <Menu />
                 </IconButton>
               ) : null}
             </div>
@@ -231,7 +231,11 @@ export default function ResponsiveNavigation(props) {
         </AppBar>
       </HideOnScroll>
       <Toolbar />
-      <Container className={classes.container}></Container>
+      <Container className={classes.container}>
+        {props.containers.map((value, index) => {
+          return value();
+        })}
+      </Container>
     </React.Fragment>
   );
 }

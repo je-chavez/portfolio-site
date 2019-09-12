@@ -12,7 +12,7 @@ const styles = makeStyles({
   }
 });
 
-export default function Hook(props) {
+export default function Button(props) {
   const classes = styles();
   const {text} = props;
 
