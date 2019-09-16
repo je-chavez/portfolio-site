@@ -1,47 +1,86 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
-import {
-  Container,
-  Typography,
-  Paper,
-  Divider,
-  Grid,
-  Button
-} from '@material-ui/core';
+import { Container, Typography, Divider, Grid } from '@material-ui/core';
+import './home.css';
 
 const styles = makeStyles({
   container: {
-    padding: '20px',
-    paddingTop: '10%',
-    paddingBottom: '20%',
-    height: '100vh'
+    width: '80%',
+    paddingTop: '5%'
   },
-  fontColor: {
-    color: customTheme.colors.font_onBackground
+  descriptorText: {
+    padding: '10px',
+    fontColor: customTheme.colors.font_primary
   },
-  fontWeight: {
-    fontWeight: 400
+  nameDiv: {
+    width: '40%',
+    textAlign: 'center',
+    display: 'block',
+    margin: 'auto'
   },
-  image: {
-    height: '400px',
-    borderRadius: '50%'
+  nameFont: {
+    color: customTheme.colors.font_primary,
+    fontWeight: 400,
+    padding: '10px',
+    fontFamily: customTheme.fontStyle
+  },
+  titleFont: {
+    color: customTheme.colors.font_primary,
+    fontWeight: 100,
+    padding: '10px',
+    fontFamily: customTheme.fontStyle
+  },
+  divider: {
+    color: customTheme.colors.primary,
+    backgroundColor: customTheme.colors.primary
+  },
+  decorationDiv: {
+    height: '200px',
+    width: '200px'
+  },
+  barOne: {
+    backgroundColor: customTheme.colors.primary,
+    width: '10px',
+    height: '150px',
+    margin: '0px 5px',
+    borderBottomLeftRadius: '10px',
+    borderBottomRightRadius: '10px'
+  },
+  barTwo: {
+    backgroundColor: customTheme.colors.primary,
+    width: '10px',
+    height: '250px',
+    margin: '0px 5px',
+    borderBottomLeftRadius: '10px',
+    borderBottomRightRadius: '10px'
+  },
+  barThree: {
+    backgroundColor: customTheme.colors.primary,
+    width: '10px',
+    height: '100px',
+    margin: '0px 5px',
+    borderBottomLeftRadius: '10px',
+    borderBottomRightRadius: '10px'
   },
   grid: {
-    paddingTop: '50px',
-    paddingBottom: '50px',
-    paddingLeft: '20px',
-    paddingRight: '20px'
+    margin: '0px 10px'
   },
-  paper: {
-    backgroundColor: customTheme.colors.surface,
-    width: '100%'
+  mainDiv: {
+    height: '100vh'
   },
-  spacing: {
-    height: '90%'
+  learnMoreText: {
+    fontFamily: customTheme.fontStyle,
+    color: customTheme.colors.font_primary
   },
-  button: {
-    backgroundColor: customTheme.colors.primary,
+  arrowIcon: {
+    color: customTheme.colors.font_primary,
+    textDecoration: 'none'
+  },
+  learnMoreBanner: {
+    width: '100%',
+    textAlign: 'center',
+    position: 'absolute',
     bottom: 0
   }
 });
@@ -50,38 +89,33 @@ export default function Home(props) {
   const classes = styles();
 
   return (
-    <Container id="home" className={classes.container}>
-      <div className={classes.spacing}>
-        <Paper className={classes.paper}>
-          <Grid
-            className={classes.grid}
-            container
-            direction='row'
-            justify='center'
-            alignItems='center'
-            spacing={5}>
-            <Grid item>
-              <img
-                className={classes.image}
-                src='http://juanchavez.me/img/profile.jpg'
-              />
-            </Grid>
-            <Grid item>
-              <Typography className={classes.fontColor} variant='h2'>
-                Hey! My name is
-              </Typography>
-              <Typography
-                className={[classes.fontColor, classes.fontWeight]}
-                variant='h1'>
-                Juan Chavez
-              </Typography>
-              <Typography className={classes.fontColor} variant='h2'>
-                I'm a fullstack developer.
-              </Typography>
-            </Grid>
-          </Grid>
-        </Paper>
+    <div className={classes.mainDiv}>
+      <Grid className={classes.grid} container direction='row' spacing={2}>
+        <Grid item className={classes.barOne}></Grid>
+        <Grid item className={classes.barTwo}></Grid>
+        <Grid item className={classes.barThree}></Grid>
+      </Grid>
+      <Container id='home' className={classes.container}>
+        <div className={classes.nameDiv}>
+          <Typography variant='h2' className={classes.nameFont}>
+            Juan Chavez
+          </Typography>
+          <Divider className={classes.divider} />
+          <Typography variant='h5' className={classes.titleFont}>
+            Fullstack Developer
+          </Typography>
+        </div>
+      </Container>
+      <div className={classes.learnMoreBanner}>
+        <a className={classes.arrowIcon} href='#about'>
+          <i
+            className='material-icons'
+            style={{ fontSize: '32px' }}
+            id='arrowDown'>
+            keyboard_arrow_down
+          </i>
+        </a>
       </div>
-    </Container>
+    </div>
   );
 }

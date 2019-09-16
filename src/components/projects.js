@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
-import { Container, Typography, Paper, Divider } from '@material-ui/core';
+import { Container, Typography, Paper, Divider, Grid } from '@material-ui/core';
 
 const styles = makeStyles({
   paper: {
@@ -26,22 +26,45 @@ const styles = makeStyles({
   }
 });
 
-export default function About(props) {
+export default function Projects(props) {
   const classes = styles();
 
   return (
-    <Container id="about" className={classes.container}>
+    <Container id='projects' className={classes.container}>
       <Paper className={classes.paper}>
+        <Grid
+          className={classes.grid}
+          container
+          direction='row'
+          justify='center'
+          alignItems='center'
+          spacing={5}>
+          <Grid item>
+            <img
+              className={classes.image}
+              src='http://juanchavez.me/img/profile.jpg'
+            />
+          </Grid>
+          <Grid item>
+            <Typography className={classes.fontColor} variant='h2'>
+              Hey! My name is
+            </Typography>
+            <Typography
+              className={[classes.fontColor, classes.fontWeight]}
+              variant='h1'>
+              Juan Chavez
+            </Typography>
+            <Typography className={classes.fontColor} variant='h2'>
+              I'm a fullstack developer.
+            </Typography>
+          </Grid>
+        </Grid>
         <div>
           <img
             className={classes.image}
             src='https://lh3.googleusercontent.com/dbnuE9voNZCTetr0Q0IVLVaxM1YX1fbOH5hk5hU9HJ8r6csxaaD3agu0V2-po_lIRZ255F64w47Egdas4Sfip4uj9j0Uxxs-MG7RfE97lcDOzYTjIZQ-mBShHl6PEcsavWFbcOEtjMpERh5ML94u38LxJJAMc_3o3dZK0AMHCp85oyOxvfIRgZGHq2OZQguMqgPgUnWPAyBt9PO4peN9V0mB6wcjRjdrxrNRbW_9_IvbyxUAIs1lNMZgB_zp_nzqSxOukIHy0woX7ZoDIf_Zsj5WlvKaoSoMGyC_rqS978t12LYOd6osCwNK9pi2w6Kj3lNhiIahc4EHd5Y08RkPiDeolxNePYQwY63e6WHtNzQRFKO6nHYvNrkQVykRL6thHYBV8PEggyssy63sLnZfRElSWlIIn3P5F5P8nMD6H0MUfXOV9bCUX015rIMz1F-aQMfuugPeqELnIfUbJtfrZ2XBrqZuqNE9zwJmlyu8pEzX3peFer836D-A7EUG8Wl4gcW_uGyqfra1tRFPh5f-d7Bx0nRhvrloRUVarAl6v-a4hEY1-B8lGPmgWEtiLr-v6bCtklG-key2SenpoyEZwMR73fiseNOnCYMWr66GQ95hWGQZhLXFd-ega6LJ0Km7XbO-DqLobEMASMBoI6wXiepfGIgeIXLWNk0rqZ0_De5Fp9BApAMHgQ=w2048-h499-no'
           />
         </div>
-        {/* <Typography variant='h2' className={classes.sectionTitle}>
-          About
-        </Typography>
-        <Divider /> */}
         <Typography variant='h4' className={classes.sectionTitle}>
           Who I Am
         </Typography>

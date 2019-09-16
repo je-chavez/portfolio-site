@@ -124,7 +124,6 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0
   },
   container: {
-    height: '300vh',
     backgroundColor: customTheme.colors.background
   },
   anchor: {

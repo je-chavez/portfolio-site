@@ -1,18 +1,19 @@
 const theme = {
   colors: {
-    primary: '#BB86FC',
+    primary: '#44BBA4',
     primary_variant: '#3700B3',
-    secondary: '#03DAC6',
-    background: '#121212',
-    surface: '#303030',
+    secondary: '#03DAC6', 
+    background: '#393E41', 
+    surface: '#393E41',
     error: '#CF6679',
 
-    font_primary: '#000',
-    font_secondary: '#000',
-    font_onBackground: '#fff',
-    font_onSurface: '#fff',
+    font_primary: '#eaeaea',
+    font_secondary: '#F6F7EB',
+    font_onBackground: '#F6F7EB',
+    font_onSurface: '#F6F7EB',
     font_onError: '#000'
-  }
+  },
+  fontStyle: 'Red Hat Display, sans-serif;'
 };
 
 export default theme;
