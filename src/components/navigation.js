@@ -195,8 +195,60 @@ export default function ResponsiveNavigation(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <HideOnScroll {...props}>
-        <AppBar
+      <div
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open
+        })}
+        style={{
+          height: '100px',
+          width: '100%',
+          backgroundColor: customTheme.colors.background,
+          position: 'fixed',
+          top: '0px',
+          textAlign: 'center'
+        }}>
+        <div className={classes.sectionMobile}>
+          {!open ? (
+            <IconButton
+              edge='start'
+              className={classes.menuButton}
+              onClick={handleDrawerOpen}
+              color='inherit'
+              aria-label='open drawer'>
+              <Menu />
+            </IconButton>
+          ) : null}
+        </div>
+        <AnchorLink className={[classes.anchor]} href='#home' offset={150}>
+          <img className={classes.logo} src='/assets/favicon.ico' />
+        </AnchorLink>
+        <div className={classes.grow} />
+        <div className={classes.sectionDesktop}>
+          <AnchorLink className={classes.anchor} href='#about' offset={150}>
+            <ListItem className={classes.listItem} button key='About'>
+              <ListItemText primary='About' />
+            </ListItem>
+          </AnchorLink>
+          <AnchorLink className={classes.anchor} href='#projects' offset={150}>
+            <ListItem className={classes.listItem} button key='Projects'>
+              <ListItemText primary='Projects' />
+            </ListItem>
+          </AnchorLink>{' '}
+          <AnchorLink className={classes.anchor} href='#contact' offset={150}>
+            <ListItem className={classes.listItem} button key='Contact'>
+              <ListItemText primary='Contact' />
+            </ListItem>
+          </AnchorLink>{' '}
+          <a className={classes.anchor} href='/resume.pdf' target='_blank'>
+            <ListItem className={classes.listItem} button key='Resume'>
+              <ListItemText primary='Resume' />
+            </ListItem>
+          </a>
+        </div>
+      </div>
+      {/*<HideOnScroll {...props}>
+        
+         <AppBar
           className={clsx(classes.appBar, {
             [classes.appBarShift]: open
           })}>
@@ -247,8 +299,8 @@ export default function ResponsiveNavigation(props) {
             </div>
           </Toolbar>
           {renderDrawer}
-        </AppBar>
-      </HideOnScroll>
+        </AppBar> 
+      </HideOnScroll>*/}
       <Toolbar />
       <Container className={classes.container}>
         {props.containers.map((value, index) => {

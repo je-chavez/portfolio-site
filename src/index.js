@@ -4,6 +4,7 @@ import Navigation from './components/navigation';
 import About from './components/about';
 import Home from './components/home';
 import Projects from './components/projects';
+import { AppBar, Toolbar } from '@material-ui/core';
 
 import customTheme from './theme/theme';
 
@@ -15,7 +16,8 @@ const divStyle = {
 
 ReactDOM.render(
   <div style={divStyle}>
-    <Home/>
+    <Home />
+    <About />
   </div>,
   document.getElementById('root')
 );

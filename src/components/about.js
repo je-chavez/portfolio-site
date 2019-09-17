@@ -1,28 +1,34 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
-import { Container, Typography, Paper, Divider } from '@material-ui/core';
+import { Container, Typography, Paper, Divider, Grid } from '@material-ui/core';
+import BubbleText from './bubbleText';
 
 const styles = makeStyles({
   paper: {
-    backgroundColor: customTheme.colors.surface
+    backgroundColor: customTheme.colors.background_secondary
   },
   container: {
     height: '100vh',
-    padding: '20px'
+    paddingTop: '60px'
   },
   sectionTitle: {
-    color: customTheme.colors.font_onSurface,
+    color: customTheme.colors.background_secondary,
     fontWeight: 400,
     padding: '20px'
   },
   image: {
-    maxWidth: '100%',
-    minHeight: '200px',
-    objectFit: 'cover'
+    maxWidth: '200px',
+    borderRadius: '50%'
   },
   ul: {
     columnCount: 2
+  },
+  grid: {
+    height: '100%'
+  },
+  spacer: {
+    height: '10%'
   }
 });
 
@@ -30,45 +36,98 @@ export default function About(props) {
   const classes = styles();
 
   return (
-    <Container id="about" className={classes.container}>
-      <Paper className={classes.paper}>
-        <div>
-          <img
-            className={classes.image}
-            src='https://lh3.googleusercontent.com/dbnuE9voNZCTetr0Q0IVLVaxM1YX1fbOH5hk5hU9HJ8r6csxaaD3agu0V2-po_lIRZ255F64w47Egdas4Sfip4uj9j0Uxxs-MG7RfE97lcDOzYTjIZQ-mBShHl6PEcsavWFbcOEtjMpERh5ML94u38LxJJAMc_3o3dZK0AMHCp85oyOxvfIRgZGHq2OZQguMqgPgUnWPAyBt9PO4peN9V0mB6wcjRjdrxrNRbW_9_IvbyxUAIs1lNMZgB_zp_nzqSxOukIHy0woX7ZoDIf_Zsj5WlvKaoSoMGyC_rqS978t12LYOd6osCwNK9pi2w6Kj3lNhiIahc4EHd5Y08RkPiDeolxNePYQwY63e6WHtNzQRFKO6nHYvNrkQVykRL6thHYBV8PEggyssy63sLnZfRElSWlIIn3P5F5P8nMD6H0MUfXOV9bCUX015rIMz1F-aQMfuugPeqELnIfUbJtfrZ2XBrqZuqNE9zwJmlyu8pEzX3peFer836D-A7EUG8Wl4gcW_uGyqfra1tRFPh5f-d7Bx0nRhvrloRUVarAl6v-a4hEY1-B8lGPmgWEtiLr-v6bCtklG-key2SenpoyEZwMR73fiseNOnCYMWr66GQ95hWGQZhLXFd-ega6LJ0Km7XbO-DqLobEMASMBoI6wXiepfGIgeIXLWNk0rqZ0_De5Fp9BApAMHgQ=w2048-h499-no'
-          />
-        </div>
-        {/* <Typography variant='h2' className={classes.sectionTitle}>
-          About
-        </Typography>
-        <Divider /> */}
-        <Typography variant='h4' className={classes.sectionTitle}>
-          Who I Am
-        </Typography>
-        <Typography variant='body1' className={classes.sectionTitle}>
-          Hi! I'm a Full-Stack Developer based in the Silicon Valley. I'm an
-          entrepreneur at heart, and love coming up with and working on new
-          ideas! My main focus as of recent has been full-stack mobile
-          development, but I'm always eager to learn about new technologies.{' '}
-        </Typography>
-        <Divider />
-        <Typography variant='h4' className={classes.sectionTitle}>
-          What I've Been Learning
-        </Typography>
-        <Typography variant='body1' className={classes.sectionTitle}>
-          Recently, I've been teaching myself more about scalable backend
-          technologies, as well as cross-platform mobile development. Subjects
-          include:
-          <ul className={classes.ul}>
-            <li>Kubernetes</li>
-            <li>Docker</li>
-            <li>Node.js</li>
-            <li>React Native</li>
-            <li>Flutter</li>
-            <li>Xamarin Forms</li>
-          </ul>
-        </Typography>
-      </Paper>
-    </Container>
+    <div style={{ backgroundColor: customTheme.colors.background_secondary }}>
+      <Container id='about' className={classes.container}>
+        <Grid
+          justify='center'
+          alignItems='center'
+          className={classes.grid}
+          container
+          direction='row'
+          spacing={5}>
+          <Grid item>
+            <Paper
+              style={{
+                width: '530px',
+                height: '440px',
+                textAlign: 'center',
+                padding: '20px'
+              }}>
+              <img
+                className={classes.image}
+                style={{ padding: '20px' }}
+                src='http://juanchavez.me/img/profile.jpg'
+              />
+              <Divider style={{ width: '50%', margin: 'auto' }} />
+
+              <Typography
+                variant='body1'
+                style={{
+                  padding: '20px',
+                  fontFamily: customTheme.fontStyle,
+                  fontSize: '18px',
+                  color: customTheme.colors.font_onBackground_secondary
+                }}>
+                Hi! I'm a Full-Stack Developer based in the Silicon Valley. I'm
+                an entrepreneur at heart, and love coming up with and working on
+                new ideas! My main focus as of recent has been full-stack mobile
+                development, but I'm always eager to learn about new
+                technologies.
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item>
+            <Paper
+              style={{
+                width: '530px',
+                height: '440px',
+                textAlign: 'center',
+                padding: '20px'
+              }}>
+              <Typography
+                variant='h4'
+                style={{
+                  padding: '20px',
+                  fontFamily: customTheme.fontStyle,
+                  color: customTheme.colors.font_onBackground_secondary
+                }}>
+                Things I'm Familiar With
+              </Typography>
+              <div
+                style={{
+                  position: 'relative',
+                  top: '35%',
+                  transform: 'translateY(-50%)',
+                  paddingRight: '20px',
+                  paddingLeft: '20px'
+                }}>
+                <div>
+                  <BubbleText text='C#' />
+                  <BubbleText text='Swift' />
+                  <BubbleText text='Node.js' />
+                </div>
+                <div>
+                  <BubbleText text='JavaScript' />
+                  <BubbleText text='Microsoft Azure' />
+                  <BubbleText text='React Native' />
+                  <BubbleText text='Flutter' />
+                </div>
+                <div>
+                  <BubbleText text='MongoDB' />
+                  <BubbleText text='Kubernetes' />
+                  <BubbleText text='Express' />
+                  <BubbleText text='Java' />
+                </div>
+                <div>
+                  <BubbleText text='ReactJS' />
+                  <BubbleText text='Docker' />
+                  <BubbleText text='Xamarin' />
+                </div>
+              </div>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+    </div>
   );
 }
