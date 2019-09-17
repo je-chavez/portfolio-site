@@ -25,10 +25,27 @@ const styles = makeStyles({
     columnCount: 2
   },
   grid: {
-    height: '100%'
+    height: '90%'
   },
   spacer: {
     height: '10%'
+  },
+  nameFont: {
+    fontWeight: 400,
+    padding: '10px',
+    fontFamily: customTheme.fontStyle
+  },
+  descriptionFont: {
+    padding: '20px',
+    fontFamily: customTheme.fontStyle,
+    fontSize: '18px',
+    color: customTheme.colors.font_onBackground_secondary
+  },
+  sectionFont: {
+    padding: '20px',
+    fontFamily: customTheme.fontStyle,
+    color: customTheme.colors.font_onBackground_secondary,
+    paddingBottom: '40px',
   }
 });
 
@@ -38,6 +55,20 @@ export default function About(props) {
   return (
     <div style={{ backgroundColor: customTheme.colors.background_secondary }}>
       <Container id='about' className={classes.container}>
+        <div style={{ height: '10%', width: '100%', textAlign: 'center' }}>
+          <Typography variant='h2' className={classes.nameFont}>
+            about
+          </Typography>
+          <div
+            style={{
+              height: '10px',
+              width: '5%',
+              margin: 'auto',
+              backgroundColor: customTheme.colors.primary
+            }}
+          />
+        </div>
+
         <Grid
           justify='center'
           alignItems='center'
@@ -58,16 +89,9 @@ export default function About(props) {
                 style={{ padding: '20px' }}
                 src='http://juanchavez.me/img/profile.jpg'
               />
-              <Divider style={{ width: '50%', margin: 'auto' }} />
+              <Divider style={{ width: '25%', margin: 'auto' }} />
 
-              <Typography
-                variant='body1'
-                style={{
-                  padding: '20px',
-                  fontFamily: customTheme.fontStyle,
-                  fontSize: '18px',
-                  color: customTheme.colors.font_onBackground_secondary
-                }}>
+              <Typography variant='body1' className={classes.descriptionFont}>
                 Hi! I'm a Full-Stack Developer based in the Silicon Valley. I'm
                 an entrepreneur at heart, and love coming up with and working on
                 new ideas! My main focus as of recent has been full-stack mobile
@@ -84,15 +108,10 @@ export default function About(props) {
                 textAlign: 'center',
                 padding: '20px'
               }}>
-              <Typography
-                variant='h4'
-                style={{
-                  padding: '20px',
-                  fontFamily: customTheme.fontStyle,
-                  color: customTheme.colors.font_onBackground_secondary
-                }}>
+              <Typography variant='h4' className={classes.sectionFont}>
                 Things I'm Familiar With
               </Typography>
+              <Divider style={{ width: '25%', margin:'auto'}}/>
               <div
                 style={{
                   position: 'relative',
@@ -110,7 +129,6 @@ export default function About(props) {
                   <BubbleText text='JavaScript' />
                   <BubbleText text='Microsoft Azure' />
                   <BubbleText text='React Native' />
-                  <BubbleText text='Flutter' />
                 </div>
                 <div>
                   <BubbleText text='MongoDB' />

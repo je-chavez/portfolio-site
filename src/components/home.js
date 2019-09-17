@@ -103,8 +103,17 @@ const styles = makeStyles(theme => ({
     paddingTop: '10px'
   },
   listItem: {
+    fontFamily: customTheme.fontStyle,
     '&:hover': {
       backgroundColor: 'inherit',
+      color: customTheme.colors.primary
+    }
+  },
+  listItemText: {
+    fontFamily: customTheme.fontStyle,
+    padding: '10px',
+    paddingTop: '0px',
+    '&:hover': {
       color: customTheme.colors.primary
     }
   },
@@ -155,25 +164,17 @@ export default function Home(props) {
       </div>
       <nav className={classes.navbar}>
         <div className={classes.sectionDesktop}>
-          <AnchorLink className={classes.anchor} href='#about' offset={150}>
-            <ListItem className={classes.listItem} button key='About'>
-              <ListItemText primary='About' />
-            </ListItem>
+          <AnchorLink className={classes.anchor} href='#about' offset={0}>
+            <p className={classes.listItemText}>about</p>
           </AnchorLink>
           <AnchorLink className={classes.anchor} href='#projects' offset={150}>
-            <ListItem className={classes.listItem} button key='Projects'>
-              <ListItemText primary='Projects' />
-            </ListItem>
-          </AnchorLink>{' '}
+            <p className={classes.listItemText}>projects</p>
+          </AnchorLink>
           <AnchorLink className={classes.anchor} href='#contact' offset={150}>
-            <ListItem className={classes.listItem} button key='Contact'>
-              <ListItemText primary='Contact' />
-            </ListItem>
-          </AnchorLink>{' '}
+            <p className={classes.listItemText}>contact</p>
+          </AnchorLink>
           <a className={classes.anchor} href='/resume.pdf' target='_blank'>
-            <ListItem className={classes.listItem} button key='Resume'>
-              <ListItemText primary='Resume' />
-            </ListItem>
+            <p className={classes.listItemText}>resume</p>
           </a>
         </div>
       </nav>
