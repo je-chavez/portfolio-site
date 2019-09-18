@@ -4,25 +4,18 @@ import customTheme from '../theme/theme';
 import { Container, Typography, Paper, Divider, Grid } from '@material-ui/core';
 
 const styles = makeStyles({
-  paper: {
-    backgroundColor: customTheme.colors.surface
-  },
   container: {
-    height: '100vh',
-    padding: '20px'
+    height: '90vh',
+    padding: '20px',
+    backgroundColor: customTheme.colors.background_secondary
+  },
+  paper: {
+    backgroundColor: customTheme.colors.background
   },
   sectionTitle: {
-    color: customTheme.colors.font_onSurface,
     fontWeight: 400,
-    padding: '20px'
-  },
-  image: {
-    maxWidth: '100%',
-    minHeight: '200px',
-    objectFit: 'cover'
-  },
-  ul: {
-    columnCount: 2
+    padding: '10px',
+    fontFamily: customTheme.fontStyle
   }
 });
 
@@ -30,68 +23,30 @@ export default function Projects(props) {
   const classes = styles();
 
   return (
-    <Container id='projects' className={classes.container}>
-      <Paper className={classes.paper}>
-        <Grid
-          className={classes.grid}
-          container
-          direction='row'
-          justify='center'
-          alignItems='center'
-          spacing={5}>
-          <Grid item>
-            <img
-              className={classes.image}
-              src='http://juanchavez.me/img/profile.jpg'
-            />
-          </Grid>
-          <Grid item>
-            <Typography className={classes.fontColor} variant='h2'>
-              Hey! My name is
-            </Typography>
-            <Typography
-              className={[classes.fontColor, classes.fontWeight]}
-              variant='h1'>
-              Juan Chavez
-            </Typography>
-            <Typography className={classes.fontColor} variant='h2'>
-              I'm a fullstack developer.
-            </Typography>
-          </Grid>
-        </Grid>
-        <div>
-          <img
-            className={classes.image}
-            src='https://lh3.googleusercontent.com/dbnuE9voNZCTetr0Q0IVLVaxM1YX1fbOH5hk5hU9HJ8r6csxaaD3agu0V2-po_lIRZ255F64w47Egdas4Sfip4uj9j0Uxxs-MG7RfE97lcDOzYTjIZQ-mBShHl6PEcsavWFbcOEtjMpERh5ML94u38LxJJAMc_3o3dZK0AMHCp85oyOxvfIRgZGHq2OZQguMqgPgUnWPAyBt9PO4peN9V0mB6wcjRjdrxrNRbW_9_IvbyxUAIs1lNMZgB_zp_nzqSxOukIHy0woX7ZoDIf_Zsj5WlvKaoSoMGyC_rqS978t12LYOd6osCwNK9pi2w6Kj3lNhiIahc4EHd5Y08RkPiDeolxNePYQwY63e6WHtNzQRFKO6nHYvNrkQVykRL6thHYBV8PEggyssy63sLnZfRElSWlIIn3P5F5P8nMD6H0MUfXOV9bCUX015rIMz1F-aQMfuugPeqELnIfUbJtfrZ2XBrqZuqNE9zwJmlyu8pEzX3peFer836D-A7EUG8Wl4gcW_uGyqfra1tRFPh5f-d7Bx0nRhvrloRUVarAl6v-a4hEY1-B8lGPmgWEtiLr-v6bCtklG-key2SenpoyEZwMR73fiseNOnCYMWr66GQ95hWGQZhLXFd-ega6LJ0Km7XbO-DqLobEMASMBoI6wXiepfGIgeIXLWNk0rqZ0_De5Fp9BApAMHgQ=w2048-h499-no'
+    <div style={{ backgroundColor: customTheme.colors.background_secondary }}>
+      <Container id='projects' className={classes.container}>
+        <div
+          style={{
+            width: '100%',
+            textAlign: 'center',
+            padding: '20px 0px 100px 0px'
+          }}>
+          <Typography variant='h2' className={classes.sectionTitle}>
+            projects
+          </Typography>
+          <div
+            style={{
+              height: '10px',
+              width: '50px',
+              margin: 'auto',
+              backgroundColor: customTheme.colors.primary
+            }}
           />
         </div>
-        <Typography variant='h4' className={classes.sectionTitle}>
-          Who I Am
-        </Typography>
-        <Typography variant='body1' className={classes.sectionTitle}>
-          Hi! I'm a Full-Stack Developer based in the Silicon Valley. I'm an
-          entrepreneur at heart, and love coming up with and working on new
-          ideas! My main focus as of recent has been full-stack mobile
-          development, but I'm always eager to learn about new technologies.{' '}
-        </Typography>
-        <Divider />
-        <Typography variant='h4' className={classes.sectionTitle}>
-          What I've Been Learning
-        </Typography>
-        <Typography variant='body1' className={classes.sectionTitle}>
-          Recently, I've been teaching myself more about scalable backend
-          technologies, as well as cross-platform mobile development. Subjects
-          include:
-          <ul className={classes.ul}>
-            <li>Kubernetes</li>
-            <li>Docker</li>
-            <li>Node.js</li>
-            <li>React Native</li>
-            <li>Flutter</li>
-            <li>Xamarin Forms</li>
-          </ul>
-        </Typography>
-      </Paper>
-    </Container>
+        <Paper style={{ height: '200px' }} className={classes.paper}>
+          <Typography variant='h4'>Gub</Typography>
+        </Paper>
+      </Container>
+    </div>
   );
 }

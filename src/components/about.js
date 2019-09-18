@@ -9,8 +9,8 @@ const styles = makeStyles({
     backgroundColor: customTheme.colors.background_secondary
   },
   container: {
-    height: '100vh',
-    paddingTop: '60px'
+    padding: '100px 0px 100px 0px',
+    display: 'block'
   },
   sectionTitle: {
     color: customTheme.colors.background_secondary,
@@ -25,12 +25,12 @@ const styles = makeStyles({
     columnCount: 2
   },
   grid: {
-    height: '90%'
+    padding: '0px 0px 150px 0px'
   },
   spacer: {
     height: '10%'
   },
-  nameFont: {
+  sectionTitle: {
     fontWeight: 400,
     padding: '10px',
     fontFamily: customTheme.fontStyle
@@ -45,7 +45,7 @@ const styles = makeStyles({
     padding: '20px',
     fontFamily: customTheme.fontStyle,
     color: customTheme.colors.font_onBackground_secondary,
-    paddingBottom: '40px',
+    paddingBottom: '40px'
   }
 });
 
@@ -55,14 +55,14 @@ export default function About(props) {
   return (
     <div style={{ backgroundColor: customTheme.colors.background_secondary }}>
       <Container id='about' className={classes.container}>
-        <div style={{ height: '10%', width: '100%', textAlign: 'center' }}>
-          <Typography variant='h2' className={classes.nameFont}>
+        <div style={{ width: '100%', textAlign: 'center', padding: '20px 0px 100px 0px' }}>
+          <Typography variant='h2' className={classes.sectionTitle}>
             about
           </Typography>
           <div
             style={{
               height: '10px',
-              width: '5%',
+              width: '50px',
               margin: 'auto',
               backgroundColor: customTheme.colors.primary
             }}
@@ -111,7 +111,7 @@ export default function About(props) {
               <Typography variant='h4' className={classes.sectionFont}>
                 Things I'm Familiar With
               </Typography>
-              <Divider style={{ width: '25%', margin:'auto'}}/>
+              <Divider style={{ width: '25%', margin: 'auto' }} />
               <div
                 style={{
                   position: 'relative',

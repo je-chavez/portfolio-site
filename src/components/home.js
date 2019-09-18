@@ -1,31 +1,27 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
-import {
-  Container,
-  Typography,
-  Divider,
-  Grid,
-  ListItem,
-  ListItemText
-} from '@material-ui/core';
+import { Container, Typography, Divider, Grid } from '@material-ui/core';
 import './home.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const styles = makeStyles(theme => ({
   container: {
     width: '80%',
-    paddingTop: '5%'
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   descriptorText: {
     padding: '10px',
     fontColor: customTheme.colors.font_primary
   },
   nameDiv: {
-    width: '500px',
-    textAlign: 'center',
-    display: 'block',
-    margin: 'auto'
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   nameFont: {
     color: customTheme.colors.font_primary,
@@ -41,7 +37,8 @@ const styles = makeStyles(theme => ({
   },
   divider: {
     color: customTheme.colors.primary,
-    backgroundColor: customTheme.colors.primary
+    backgroundColor: customTheme.colors.primary,
+    width: '400px'
   },
   decorationDiv: {
     height: '200px',
@@ -72,10 +69,16 @@ const styles = makeStyles(theme => ({
     borderBottomRightRadius: '10px'
   },
   grid: {
-    padding: '0px 20px'
+    padding: '0px 20px',
+    position: 'absolute',
+    top: '0px'
   },
   mainDiv: {
-    height: '100vh'
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   learnMoreText: {
     fontFamily: customTheme.fontStyle,
@@ -83,19 +86,21 @@ const styles = makeStyles(theme => ({
   },
   arrowIcon: {
     color: customTheme.colors.font_primary,
-    textDecoration: 'none'
+    textDecoration: 'none',
+    '&:hover': {
+      color: customTheme.colors.primary
+    }
   },
   learnMoreBanner: {
     width: '100%',
     textAlign: 'center',
     position: 'absolute',
-    bottom: '50px'
+    bottom: '20px'
   },
   navbar: {
     height: '50px',
     width: '100%',
     backgroundColor: customTheme.colors.background,
-    position: 'absolute',
     bottom: '-50px',
     left: '0px',
     borderBottom: '4px solid',
@@ -111,6 +116,7 @@ const styles = makeStyles(theme => ({
   },
   listItemText: {
     fontFamily: customTheme.fontStyle,
+    fontSize: '18px',
     padding: '10px',
     paddingTop: '0px',
     '&:hover': {
@@ -162,22 +168,6 @@ export default function Home(props) {
           </i>
         </AnchorLink>
       </div>
-      <nav className={classes.navbar}>
-        <div className={classes.sectionDesktop}>
-          <AnchorLink className={classes.anchor} href='#about' offset={0}>
-            <p className={classes.listItemText}>about</p>
-          </AnchorLink>
-          <AnchorLink className={classes.anchor} href='#projects' offset={150}>
-            <p className={classes.listItemText}>projects</p>
-          </AnchorLink>
-          <AnchorLink className={classes.anchor} href='#contact' offset={150}>
-            <p className={classes.listItemText}>contact</p>
-          </AnchorLink>
-          <a className={classes.anchor} href='/resume.pdf' target='_blank'>
-            <p className={classes.listItemText}>resume</p>
-          </a>
-        </div>
-      </nav>
     </div>
   );
 }
