@@ -56,7 +56,7 @@ export default function ResponsiveNavigation(props) {
         <AnchorLink className={classes.anchor} href='#projects' offset={80}>
           <p className={classes.listItemText}>projects</p>
         </AnchorLink>
-        <AnchorLink className={classes.anchor} href='#contact' offset={150}>
+        <AnchorLink className={classes.anchor} href='#contact' offset={-40}>
           <p className={classes.listItemText}>contact</p>
         </AnchorLink>
         <a className={classes.anchor} href='/resume.pdf' target='_blank'>

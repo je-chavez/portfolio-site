@@ -8,6 +8,7 @@ import { Grid } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/navigation';
 import Footer from './containers/footer';
+import Contact from './containers/contact';
 
 const divStyle = {
   backgroundColor: customTheme.colors.background,
@@ -25,6 +26,9 @@ ReactDOM.render(
       </Grid>
       <Grid item>
         <Projects />
+      </Grid>
+      <Grid item>
+        <Contact />
       </Grid>
     </Grid>
     <Footer/>

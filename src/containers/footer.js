@@ -23,6 +23,13 @@ const styles = makeStyles({
     fontFamily: customTheme.fontStyle,
     fontSize: '14px',
     paddingTop: '20px'
+  },
+  footerDivider: {
+    display: 'inline-block',
+    width: '150px',
+    height: '1px',
+    backgroundColor: customTheme.colors.background_secondary,
+    marginBottom:'24px'
   }
 });
 
@@ -31,7 +38,13 @@ export default function Footer(props) {
 
   return (
     <div className={classes.mainDivFooter}>
-      <a className={classes.logo} href='https://github.com/je-chavez' target='_blank'>
+      <div
+        className={classes.footerDivider}
+      />
+      <a
+        className={classes.logo}
+        href='https://github.com/je-chavez'
+        target='_blank'>
         <ion-icon
           name='logo-github'
           size='large'
@@ -41,7 +54,10 @@ export default function Footer(props) {
             borderRadius: '50%'
           }}></ion-icon>
       </a>
-      <a className={classes.logo} href='https://linkedin.com/in/juanenriquechavez' target='_blank'>
+      <a
+        className={classes.logo}
+        href='https://linkedin.com/in/juanenriquechavez'
+        target='_blank'>
         <ion-icon
           name='logo-linkedIn'
           size='large'
@@ -51,7 +67,10 @@ export default function Footer(props) {
             borderRadius: '50%'
           }}></ion-icon>
       </a>
-      <a className={classes.logo} href='https://instagram.com/juandollah' target='_blank'>
+      <a
+        className={classes.logo}
+        href='https://instagram.com/juandollah'
+        target='_blank'>
         <ion-icon
           name='logo-instagram'
           size='large'
@@ -61,6 +80,9 @@ export default function Footer(props) {
             borderRadius: '50%'
           }}></ion-icon>
       </a>
+      <div
+        className={classes.footerDivider}
+      />
       <Typography className={classes.name} variant='body1'>
         JUAN CHAVEZ •{' '}
         <span style={{ color: customTheme.colors.primary }}>2019</span>
