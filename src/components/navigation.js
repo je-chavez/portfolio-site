@@ -50,7 +50,7 @@ export default function ResponsiveNavigation(props) {
   return (
     <React.Fragment>
       <Navbar sticky='top' className={classes.navbar}>
-        <AnchorLink className={classes.anchor} href='#about' offset={0}>
+        <AnchorLink className={classes.anchor} href='#about' offset={-30}>
           <p className={classes.listItemText}>about</p>
         </AnchorLink>
         <AnchorLink className={classes.anchor} href='#projects' offset={80}>

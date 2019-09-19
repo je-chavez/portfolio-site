@@ -9,13 +9,8 @@ const styles = makeStyles({
     backgroundColor: customTheme.colors.background_secondary
   },
   container: {
-    padding: '100px 0px 100px 0px',
+    padding: '100px 0px 60px 0px',
     display: 'block'
-  },
-  sectionTitle: {
-    color: customTheme.colors.background_secondary,
-    fontWeight: 400,
-    padding: '20px'
   },
   image: {
     maxWidth: '200px',
@@ -33,7 +28,8 @@ const styles = makeStyles({
   sectionTitle: {
     fontWeight: 400,
     padding: '10px',
-    fontFamily: customTheme.fontStyle
+    fontFamily: customTheme.fontStyle,
+    color: customTheme.colors.font_onBackground_secondary
   },
   descriptionFont: {
     padding: '20px',
@@ -55,7 +51,12 @@ export default function About(props) {
   return (
     <div style={{ backgroundColor: customTheme.colors.background_secondary }}>
       <Container id='about' className={classes.container}>
-        <div style={{ width: '100%', textAlign: 'center', padding: '20px 0px 100px 0px' }}>
+        <div
+          style={{
+            width: '100%',
+            textAlign: 'center',
+            padding: '20px 0px 100px 0px'
+          }}>
           <Typography variant='h2' className={classes.sectionTitle}>
             about
           </Typography>
