@@ -51,8 +51,8 @@ export default function Projects(props) {
           description='A content hub for gaming. An easy-to-use application that
                 delivers gaming news, trending twitch clips and gaming reviews
                 straight to gamers. Published on the AppStore and Play Store.'
-          primaryImage='http://juanchavez.me/img/gub_news.png'
-          secondaryImage='http://juanchavez.me/img/gub_twitch.png'
+          primaryImage='http://juanchavez.me/assets/gub_news.png'
+          secondaryImage='http://juanchavez.me/assets/gub_twitch.png'
           techStack={[
             'React Native',
             'Kubernetes',
@@ -69,8 +69,8 @@ export default function Projects(props) {
           description=' A location-based social media platform. The idea is to be able
           to see where your friends have gone and get ideas of where to
           adventure next.'
-          primaryImage='http://juanchavez.me/img/ventura_login.jpg'
-          secondaryImage='http://juanchavez.me/img/ventura_map.png'
+          primaryImage='http://juanchavez.me/assets/ventura_login.jpg'
+          secondaryImage='http://juanchavez.me/assets/ventura_map.png'
           techStack={['Xamarin Forms', 'Nodejs', 'Microsoft Azure']}
           githubLink=''
         />
