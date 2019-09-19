@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
 import { Container, Typography, Paper, Divider, Grid } from '@material-ui/core';
-import BubbleText from './bubbleText';
+import BubbleText from '../components/bubbleText';
 
 const styles = makeStyles({
   paper: {

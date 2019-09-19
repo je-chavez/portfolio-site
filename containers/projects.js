@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
 import { Container, Typography, Divider, Grid } from '@material-ui/core';
-import SmallProject from './smallProject';
-import BigProject from './bigProject';
+import SmallProject from '../components/smallProject';
+import BigProject from '../components/bigProject';
 
 const styles = makeStyles({
   container: {

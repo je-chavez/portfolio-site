@@ -21,7 +21,7 @@ const styles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   nameFont: {
     color: customTheme.colors.font_primary,

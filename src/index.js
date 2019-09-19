@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import About from './components/about';
-import Home from './components/home';
-import Projects from './components/projects';
+import About from './containers/about';
+import Home from './containers/home';
+import Projects from './containers/projects';
 import customTheme from './theme/theme';
 import { Grid } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/navigation';
-import Footer from './components/footer';
+import Footer from './containers/footer';
 
 const divStyle = {
   backgroundColor: customTheme.colors.background,
