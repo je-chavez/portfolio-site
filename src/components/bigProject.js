@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
-import { Typography, Paper, Divider, Grid } from '@material-ui/core';
+import { Typography, Paper, Divider, Grid, Hidden } from '@material-ui/core';
 import ToolText from './toolText';
 
-const styles = makeStyles({
+const styles = makeStyles(theme => ({
   paper: {
     backgroundColor: '#fff',
     width: '500px',
@@ -21,7 +21,7 @@ const styles = makeStyles({
     fontFamily: customTheme.fontStyle,
     textAlign: 'center',
     color: customTheme.colors.font_onBackground_secondary,
-    fontSize: '18px',
+    fontSize: '18px'
   },
   logo: {
     textDecoration: 'none',
@@ -31,9 +31,18 @@ const styles = makeStyles({
     }
   },
   projectImage: {
-    maxHeight: '400px'
+    maxHeight: '400px',
+    width: '210px'
+  },
+  secondProjectImage: {
+    maxHeight: '400px',
+    width: '210px',
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    }
   }
-});
+}));
 
 export default function SmallProject(props) {
   const classes = styles();
@@ -101,9 +110,9 @@ export default function SmallProject(props) {
       <Grid item>
         <img className={classes.projectImage} src={primaryImage} />
       </Grid>
-      <Grid item>
-        <img className={classes.projectImage} src={secondaryImage} />
-      </Grid>
+        <Grid item>
+          <img className={classes.secondProjectImage} src={secondaryImage} />
+        </Grid>
     </Grid>
   );
 }

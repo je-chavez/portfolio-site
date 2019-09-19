@@ -17,7 +17,7 @@ const styles = makeStyles({
   paper: {
     padding: '20px',
     textAlign: 'center',
-    width: '600px',
+    width: '500px',
     height: '300px',
     margin: 'auto'
   },

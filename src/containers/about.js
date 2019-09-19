@@ -1,12 +1,35 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
-import { Container, Typography, Paper, Divider, Grid } from '@material-ui/core';
+import {
+  Container,
+  Typography,
+  Paper,
+  Divider,
+  Grid,
+  Hidden
+} from '@material-ui/core';
 import BubbleText from '../components/bubbleText';
 
-const styles = makeStyles({
+const styles = makeStyles(theme => ({
   paper: {
-    backgroundColor: customTheme.colors.background_secondary
+    width: '400px',
+    textAlign: 'center',
+    padding: '20px',
+    [theme.breakpoints.up('sm')]: {
+      width: '530px',
+      height: '440px'
+    }
+  },
+  secondPaper: {
+    width: '400px',
+    textAlign: 'center',
+    padding: '20px',
+    height: '580px',
+    [theme.breakpoints.up('sm')]: {
+      width: '530px',
+      height: '440px'
+    }
   },
   container: {
     padding: '100px 0px 60px 0px',
@@ -20,7 +43,8 @@ const styles = makeStyles({
     columnCount: 2
   },
   grid: {
-    padding: '0px 0px 150px 0px'
+    padding: '0px 0px 150px 0px',
+    margin: '0px'
   },
   spacer: {
     height: '10%'
@@ -43,7 +67,7 @@ const styles = makeStyles({
     color: customTheme.colors.font_onBackground_secondary,
     paddingBottom: '40px'
   }
-});
+}));
 
 export default function About(props) {
   const classes = styles();
@@ -75,16 +99,9 @@ export default function About(props) {
           alignItems='center'
           className={classes.grid}
           container
-          direction='row'
-          spacing={5}>
-          <Grid item>
-            <Paper
-              style={{
-                width: '530px',
-                height: '440px',
-                textAlign: 'center',
-                padding: '20px'
-              }}>
+          direction='row'>
+          <Grid item style={{padding: '30px'}}>
+            <Paper className={classes.paper}>
               <img
                 className={classes.image}
                 style={{ padding: '20px' }}
@@ -103,12 +120,7 @@ export default function About(props) {
           </Grid>
           <Grid item>
             <Paper
-              style={{
-                width: '530px',
-                height: '440px',
-                textAlign: 'center',
-                padding: '20px'
-              }}>
+              className={classes.secondPaper}>
               <Typography variant='h4' className={classes.sectionFont}>
                 Things I'm Familiar With
               </Typography>

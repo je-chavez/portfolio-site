@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
 import { Typography } from '@material-ui/core';
 
-const styles = makeStyles({
+const styles = makeStyles(theme => ({
   mainDivFooter: {
     height: '200px',
     width: '100%',
@@ -26,12 +26,15 @@ const styles = makeStyles({
   },
   footerDivider: {
     display: 'inline-block',
-    width: '150px',
+    width: '50px',
     height: '1px',
     backgroundColor: customTheme.colors.background_secondary,
-    marginBottom:'24px'
+    marginBottom:'24px',
+    [theme.breakpoints.up('sm')]: {
+      width: '150px',
+    }
   }
-});
+}));
 
 export default function Footer(props) {
   const classes = styles();
