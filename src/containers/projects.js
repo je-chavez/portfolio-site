@@ -5,10 +5,10 @@ import { Container, Typography, Divider, Grid } from '@material-ui/core';
 import SmallProject from '../components/smallProject';
 import BigProject from '../components/bigProject';
 
-const styles = makeStyles({
+const styles = makeStyles(theme => ({
   container: {
     padding: '0px 20px 100px 20px',
-    backgroundColor: customTheme.colors.background_secondary
+    backgroundColor: customTheme.colors.background_secondary,
   },
   paper: {
     backgroundColor: '#fff',
@@ -18,9 +18,13 @@ const styles = makeStyles({
     fontWeight: 400,
     padding: '10px',
     fontFamily: customTheme.fontStyle,
-    color: customTheme.colors.font_onBackground_secondary
+    color: customTheme.colors.font_onBackground_secondary,
+    fontSize: '50px',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '60px'
+    }
   }
-});
+}));
 
 export default function Projects(props) {
   const classes = styles();
@@ -98,7 +102,7 @@ export default function Projects(props) {
               description='A simple web scraper that gets news from IGN and stores it into
                 a database. Uses Cheerio to parse HTML markup.'
               githubLink='https://github.com/je-chavez/ign-scraper'
-              techStack={['Nodejs', 'Cheerio', 'Express', 'MongoDB']}
+              techStack={['Nodejs', 'Express', 'MongoDB']}
             />
           </Grid>
           <Grid item>

@@ -13,32 +13,30 @@ const styles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  descriptorText: {
-    padding: '10px',
-    fontColor: customTheme.colors.font_primary
-  },
   nameDiv: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   nameFont: {
     color: customTheme.colors.font_primary,
     fontWeight: 400,
     padding: '10px',
-    fontFamily: customTheme.fontStyle
+    fontSize: '50px',
+    fontFamily: customTheme.fontStyle,
   },
   titleFont: {
     color: customTheme.colors.font_primary,
     fontWeight: 100,
     padding: '10px',
-    fontFamily: customTheme.fontStyle
+    fontFamily: customTheme.fontStyle,
   },
   divider: {
     color: customTheme.colors.primary,
     backgroundColor: customTheme.colors.primary,
-    width: '400px'
+    width: '300px',
+    height: '2px',
   },
   decorationDiv: {
     height: '200px',
@@ -50,7 +48,7 @@ const styles = makeStyles(theme => ({
     height: '150px',
     margin: '0px 5px',
     borderBottomLeftRadius: '10px',
-    borderBottomRightRadius: '10px'
+    borderBottomRightRadius: '10px',
   },
   barTwo: {
     backgroundColor: customTheme.colors.primary,
@@ -58,7 +56,7 @@ const styles = makeStyles(theme => ({
     height: '300px',
     margin: '0px 5px',
     borderBottomLeftRadius: '10px',
-    borderBottomRightRadius: '10px'
+    borderBottomRightRadius: '10px',
   },
   barThree: {
     backgroundColor: customTheme.colors.primary,
@@ -66,7 +64,7 @@ const styles = makeStyles(theme => ({
     height: '100px',
     margin: '0px 5px',
     borderBottomLeftRadius: '10px',
-    borderBottomRightRadius: '10px'
+    borderBottomRightRadius: '10px',
   },
   grid: {
     padding: '0px 20px',
@@ -97,16 +95,6 @@ const styles = makeStyles(theme => ({
     position: 'absolute',
     bottom: '20px'
   },
-  navbar: {
-    height: '50px',
-    width: '100%',
-    backgroundColor: customTheme.colors.background,
-    bottom: '-50px',
-    left: '0px',
-    borderBottom: '4px solid',
-    borderBottomColor: customTheme.colors.primary,
-    paddingTop: '10px'
-  },
   listItem: {
     fontFamily: customTheme.fontStyle,
     '&:hover': {
@@ -127,13 +115,6 @@ const styles = makeStyles(theme => ({
     color: customTheme.colors.font_primary,
     fontFamily: customTheme.fontStyle,
     textDecoration: 'none'
-  },
-  sectionDesktop: {
-    display: 'none',
-    paddingLeft: '5%',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex'
-    }
   }
 }));
 
@@ -147,7 +128,7 @@ export default function Home(props) {
         <Grid item className={classes.barTwo}></Grid>
         <Grid item className={classes.barThree}></Grid>
       </Grid>
-      <Container id='home' className={classes.container}>
+      <Container id='home' classN ame={classes.container}>
         <div className={classes.nameDiv}>
           <Typography variant='h2' className={classes.nameFont}>
             Juan Chavez

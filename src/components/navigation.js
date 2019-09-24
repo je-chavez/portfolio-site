@@ -8,13 +8,13 @@ import { Navbar } from 'react-bootstrap';
 
 const useStyles = makeStyles(theme => ({
   navbar: {
-    height: '50px',
+    height: '5vh',
     width: '100%',
     backgroundColor: customTheme.colors.background,
     borderBottom: '4px solid',
     borderBottomColor: customTheme.colors.primary,
     paddingTop: '30px',
-    paddingLeft: '30px'
+    paddingLeft: '30px',
   },
   listItem: {
     fontFamily: customTheme.fontStyle,
@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     '&:hover': {
       color: customTheme.colors.primary,
       textDecoration: 'none'
-    }
+    },
   },
   anchor: {
     color: customTheme.colors.font_primary,

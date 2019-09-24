@@ -13,7 +13,7 @@ import BubbleText from '../components/bubbleText';
 
 const styles = makeStyles(theme => ({
   paper: {
-    width: '400px',
+    width: '300px',
     textAlign: 'center',
     padding: '20px',
     [theme.breakpoints.up('sm')]: {
@@ -22,7 +22,7 @@ const styles = makeStyles(theme => ({
     }
   },
   secondPaper: {
-    width: '400px',
+    width: '300px',
     textAlign: 'center',
     padding: '20px',
     height: '580px',
@@ -32,8 +32,11 @@ const styles = makeStyles(theme => ({
     }
   },
   container: {
-    padding: '100px 0px 60px 0px',
-    display: 'block'
+    padding: '100px 0px 0px 0px',
+    display: 'block',
+    [theme.breakpoints.up('sm')]: {
+      padding: '100px 0px 60px 0px',
+    }
   },
   image: {
     maxWidth: '200px',
@@ -53,7 +56,11 @@ const styles = makeStyles(theme => ({
     fontWeight: 400,
     padding: '10px',
     fontFamily: customTheme.fontStyle,
-    color: customTheme.colors.font_onBackground_secondary
+    color: customTheme.colors.font_onBackground_secondary,
+    fontSize: '50px',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '60px'
+    }
   },
   descriptionFont: {
     padding: '20px',
@@ -65,7 +72,11 @@ const styles = makeStyles(theme => ({
     padding: '20px',
     fontFamily: customTheme.fontStyle,
     color: customTheme.colors.font_onBackground_secondary,
-    paddingBottom: '40px'
+    paddingBottom: '40px',
+    fontSize: '30px',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '36px'
+    }
   }
 }));
 
@@ -100,7 +111,7 @@ export default function About(props) {
           className={classes.grid}
           container
           direction='row'>
-          <Grid item style={{padding: '30px'}}>
+          <Grid item style={{ padding: '30px' }}>
             <Paper className={classes.paper}>
               <img
                 className={classes.image}
@@ -119,8 +130,7 @@ export default function About(props) {
             </Paper>
           </Grid>
           <Grid item>
-            <Paper
-              className={classes.secondPaper}>
+            <Paper className={classes.secondPaper}>
               <Typography variant='h4' className={classes.sectionFont}>
                 Things I'm Familiar With
               </Typography>

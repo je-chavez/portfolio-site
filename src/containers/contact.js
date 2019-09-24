@@ -3,28 +3,43 @@ import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
 import { Container, Typography, Paper } from '@material-ui/core';
 
-const styles = makeStyles({
+const styles = makeStyles(theme => ({
   container: {
-    padding: '100px 0px 280px 0px',
-    display: 'block'
+    padding: '60px 0px 100px 0px',
+    display: 'block',
+    [theme.breakpoints.up('sm')]: {
+      padding: '100px 0px 280px 0px'
+    }
   },
   sectionTitle: {
     fontWeight: 400,
     padding: '10px',
     fontFamily: customTheme.fontStyle,
-    color: customTheme.colors.font_onBackground_secondary
+    color: customTheme.colors.font_onBackground_secondary,
+    fontSize: '50px',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '60px'
+    }
   },
   paper: {
     padding: '20px',
     textAlign: 'center',
-    width: '500px',
-    height: '300px',
-    margin: 'auto'
+    width: '300px',
+    height: '400px',
+    margin: 'auto',
+    [theme.breakpoints.up('sm')]: {
+      width: '500px',
+      height: '300px'
+    }
   },
   title: {
     fontFamily: customTheme.fontStyle,
     color: customTheme.colors.font_onBackground_secondary,
-    paddingBottom: '20px'
+    paddingBottom: '20px',
+    fontSize: '30px',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '36px'
+    }
   },
   subtitle: {
     fontFamily: customTheme.fontStyle,
@@ -45,7 +60,7 @@ const styles = makeStyles({
     },
     padding: '20px'
   }
-});
+}));
 
 export default function Contact(props) {
   const classes = styles();

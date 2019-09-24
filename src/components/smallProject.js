@@ -4,18 +4,26 @@ import customTheme from '../theme/theme';
 import { Typography, Paper, Divider, Grid } from '@material-ui/core';
 import ToolText from './toolText';
 
-const styles = makeStyles({
+const styles = makeStyles(theme => ({
   paper: {
     backgroundColor: '#fff',
-    width: '350px',
-    height: '320px',
+    width: '300px',
+    height: '350px',
     textAlign: 'center',
-    padding: '20px'
+    padding: '20px',
+    [theme.breakpoints.up('sm')]: {
+      width: '350px',
+      height: '320px'
+    }
   },
   projectTitle: {
     fontFamily: customTheme.fontStyle,
     textAlign: 'center',
-    color: customTheme.colors.font_onBackground_secondary
+    fontSize: '30px',
+    color: customTheme.colors.font_onBackground_secondary,
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '36px'
+    }
   },
   projectDescription: {
     fontFamily: customTheme.fontStyle,
@@ -30,7 +38,7 @@ const styles = makeStyles({
       color: customTheme.colors.primary
     }
   }
-});
+}));
 
 export default function SmallProject(props) {
   const classes = styles();

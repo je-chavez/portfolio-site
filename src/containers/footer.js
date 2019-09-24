@@ -5,11 +5,15 @@ import { Typography } from '@material-ui/core';
 
 const styles = makeStyles(theme => ({
   mainDivFooter: {
-    height: '200px',
+    height: '100px',
     width: '100%',
     backgroundColor: customTheme.colors.background,
     textAlign: 'center',
-    paddingTop: '50px'
+    paddingTop: '20px',
+    [theme.breakpoints.up('sm')]: {
+      height: '200px',
+      paddingTop: '50px',
+    }
   },
   logo: {
     color: customTheme.colors.font_primary,

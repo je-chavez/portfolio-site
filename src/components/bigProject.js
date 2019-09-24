@@ -7,21 +7,32 @@ import ToolText from './toolText';
 const styles = makeStyles(theme => ({
   paper: {
     backgroundColor: '#fff',
-    width: '500px',
-    height: '350px',
+    width: '300px',
+    height: '450px',
     textAlign: 'center',
-    padding: '20px'
+    padding: '20px',
+    [theme.breakpoints.up('sm')]: {
+      width: '500px',
+      height: '350px'
+    }
   },
   projectTitle: {
     fontFamily: customTheme.fontStyle,
     textAlign: 'center',
-    color: customTheme.colors.font_onBackground_secondary
+    color: customTheme.colors.font_onBackground_secondary,
+    fontSize: '30px',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '36px'
+    }
   },
   projectDescription: {
     fontFamily: customTheme.fontStyle,
     textAlign: 'center',
     color: customTheme.colors.font_onBackground_secondary,
-    fontSize: '18px'
+    fontSize: '18px',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '18px'
+    }
   },
   logo: {
     textDecoration: 'none',
@@ -38,8 +49,17 @@ const styles = makeStyles(theme => ({
     maxHeight: '400px',
     width: '210px',
     display: 'none',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('lg')]: {
       display: 'block'
+    }
+  },
+  gridItem: {
+    display: 'block',
+    width: '100%',
+    textAlign: 'center',
+    [theme.breakpoints.up('lg')]: {
+      display: 'block',
+      width: 'auto'
     }
   }
 }));
@@ -107,12 +127,12 @@ export default function SmallProject(props) {
           {logo()}
         </Paper>
       </Grid>
-      <Grid item>
+      <Grid item className={classes.gridItem}>
         <img className={classes.projectImage} src={primaryImage} />
       </Grid>
-        <Grid item>
-          <img className={classes.secondProjectImage} src={secondaryImage} />
-        </Grid>
+      <Grid item>
+        <img className={classes.secondProjectImage} src={secondaryImage} />
+      </Grid>
     </Grid>
   );
 }
