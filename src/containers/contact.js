@@ -8,7 +8,7 @@ const styles = makeStyles(theme => ({
     padding: '60px 0px 100px 0px',
     display: 'block',
     [theme.breakpoints.up('sm')]: {
-      padding: '100px 0px 280px 0px'
+      padding: '100px 0px 100px 0px'
     }
   },
   sectionTitle: {
