@@ -116,7 +116,7 @@ export default function About(props) {
               <img
                 className={classes.image}
                 style={{ padding: '20px' }}
-                src='http://juanchavez.me/assets/profile.jpg'
+                src='/assets/profile.jpg'
               />
               <Divider style={{ width: '25%', margin: 'auto' }} />
 

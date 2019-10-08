@@ -76,7 +76,8 @@ export default function Projects(props) {
           primaryImage='http://juanchavez.me/assets/ventura_login.jpg'
           secondaryImage='http://juanchavez.me/assets/ventura_map.png'
           techStack={['Xamarin Forms', 'Nodejs', 'Microsoft Azure']}
-          githubLink=''
+          githubLink='https://github.com/je-chavez/Ventura'
+          websiteLink=''
         />
 
         <Grid
