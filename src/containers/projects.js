@@ -64,7 +64,7 @@ export default function Projects(props) {
             'Microsoft Azure'
           ]}
           githubLink=''
-          websiteLink='https://gub.gg'
+          websiteLink='https://gub.app'
         />
 
         <Divider style={{ margin: '50px' }} />
