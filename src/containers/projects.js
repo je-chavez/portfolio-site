@@ -52,11 +52,9 @@ export default function Projects(props) {
         </div>
         <BigProject
           title='Gub'
-          description='A content hub for gaming. An easy-to-use application that
-                delivers gaming news, trending twitch clips and gaming reviews
-                straight to gamers. Published on the AppStore and Play Store.'
-          primaryImage='http://juanchavez.me/assets/gub_news.png'
-          secondaryImage='http://juanchavez.me/assets/gub_twitch.png'
+          description='Gaming news delivered straight to gamers by a gamer! It shows aggregated news articles from IGN, Polygon, Eurogamer, GameInformer, GamesRadar and Eurogamer.'
+          primaryImage='http://juanchavez.me/assets/sc1.png'
+          secondaryImage='http://juanchavez.me/assets/sc2.png'
           techStack={[
             'React Native',
             'Kubernetes',
