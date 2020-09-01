@@ -4,52 +4,31 @@ import customTheme from '../theme/theme';
 import { Container, Typography, Divider, Grid } from '@material-ui/core';
 import SmallProject from '../components/smallProject';
 import BigProject from '../components/bigProject';
+import SectionTitle from '../components/sectionTitle';
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles((theme) => ({
   container: {
     padding: '0px 20px 100px 20px',
     backgroundColor: customTheme.colors.background_secondary,
   },
   paper: {
     backgroundColor: '#fff',
-    width: '500px'
+    width: '500px',
   },
-  sectionTitle: {
-    fontWeight: 400,
-    padding: '10px',
-    fontFamily: customTheme.fontStyle,
-    color: customTheme.colors.font_onBackground_secondary,
-    fontSize: '50px',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '60px'
-    }
-  }
 }));
 
 export default function Projects(props) {
   const classes = styles();
 
   return (
-    <div style={{ backgroundColor: customTheme.colors.background_secondary }}>
+    <div
+      style={{
+        backgroundColor: customTheme.colors.background_secondary,
+        paddingTop: '100px',
+      }}
+    >
       <Container id='projects' className={classes.container}>
-        <div
-          style={{
-            width: '100%',
-            textAlign: 'center',
-            padding: '0px 0px 100px 0px'
-          }}>
-          <Typography variant='h2' className={classes.sectionTitle}>
-            projects
-          </Typography>
-          <div
-            style={{
-              height: '10px',
-              width: '50px',
-              margin: 'auto',
-              backgroundColor: customTheme.colors.primary
-            }}
-          />
-        </div>
+        <SectionTitle title={'projects'} />
         <BigProject
           title='Gub'
           description='Gaming news delivered straight to gamers by a gamer! It shows aggregated news articles from IGN, Polygon, Eurogamer, GameInformer, GamesRadar and Eurogamer.'
@@ -59,7 +38,7 @@ export default function Projects(props) {
             'React Native',
             'Kubernetes',
             'Nodejs',
-            'Microsoft Azure'
+            'Microsoft Azure',
           ]}
           githubLink=''
           websiteLink='https://gub.app'
@@ -85,7 +64,8 @@ export default function Projects(props) {
           style={{ paddingTop: '100px' }}
           container
           direction='row'
-          spacing={5}>
+          spacing={5}
+        >
           <Grid item>
             <SmallProject
               title='JWT Custom Auth'

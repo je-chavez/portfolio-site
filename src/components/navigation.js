@@ -6,9 +6,10 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Navbar } from 'react-bootstrap';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   navbar: {
     height: '5vh',
+    maxHeight: '50px',
     width: '100%',
     backgroundColor: customTheme.colors.background,
     borderBottom: '4px solid',
@@ -20,8 +21,8 @@ const useStyles = makeStyles(theme => ({
     fontFamily: customTheme.fontStyle,
     '&:hover': {
       backgroundColor: 'inherit',
-      color: customTheme.colors.primary
-    }
+      color: customTheme.colors.primary,
+    },
   },
   listItemText: {
     fontFamily: customTheme.fontStyle,
@@ -30,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     paddingTop: '0px',
     '&:hover': {
       color: customTheme.colors.primary,
-      textDecoration: 'none'
+      textDecoration: 'none',
     },
   },
   anchor: {
@@ -39,8 +40,8 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
     '&:hover': {
       color: customTheme.colors.primary,
-      textDecoration: 'none'
-    }
+      textDecoration: 'none',
+    },
   },
 }));
 
@@ -50,10 +51,10 @@ export default function ResponsiveNavigation(props) {
   return (
     <React.Fragment>
       <Navbar sticky='top' className={classes.navbar}>
-        <AnchorLink className={classes.anchor} href='#about' offset={-30}>
+        <AnchorLink className={classes.anchor} href='#about'>
           <p className={classes.listItemText}>about</p>
         </AnchorLink>
-        <AnchorLink className={classes.anchor} href='#projects' offset={80}>
+        <AnchorLink className={classes.anchor} href='#projects' offset={70}>
           <p className={classes.listItemText}>projects</p>
         </AnchorLink>
         <AnchorLink className={classes.anchor} href='#contact' offset={-40}>

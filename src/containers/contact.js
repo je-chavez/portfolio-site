@@ -2,24 +2,15 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
 import { Container, Typography, Paper } from '@material-ui/core';
+import SectionTitle from '../components/sectionTitle';
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles((theme) => ({
   container: {
     padding: '60px 0px 100px 0px',
     display: 'block',
     [theme.breakpoints.up('sm')]: {
-      padding: '100px 0px 100px 0px'
-    }
-  },
-  sectionTitle: {
-    fontWeight: 400,
-    padding: '10px',
-    fontFamily: customTheme.fontStyle,
-    color: customTheme.colors.font_onBackground_secondary,
-    fontSize: '50px',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '60px'
-    }
+      padding: '100px 0px 100px 0px',
+    },
   },
   paper: {
     padding: '20px',
@@ -29,8 +20,8 @@ const styles = makeStyles(theme => ({
     margin: 'auto',
     [theme.breakpoints.up('sm')]: {
       width: '500px',
-      height: '300px'
-    }
+      height: '300px',
+    },
   },
   title: {
     fontFamily: customTheme.fontStyle,
@@ -38,54 +29,37 @@ const styles = makeStyles(theme => ({
     paddingBottom: '20px',
     fontSize: '30px',
     [theme.breakpoints.up('sm')]: {
-      fontSize: '36px'
-    }
+      fontSize: '36px',
+    },
   },
   subtitle: {
     fontFamily: customTheme.fontStyle,
     color: customTheme.colors.font_onBackground_secondary,
-    fontSize: '16px'
+    fontSize: '16px',
   },
   body: {
     fontFamily: customTheme.fontStyle,
     color: customTheme.colors.font_onBackground_secondary,
     fontSize: '18px',
     padding: '30px',
-    paddingBottom: '50px'
+    paddingBottom: '50px',
   },
   logo: {
     color: customTheme.colors.font_onBackground_secondary,
     '&:hover': {
-      color: customTheme.colors.primary
+      color: customTheme.colors.primary,
     },
-    padding: '20px'
-  }
+    padding: '20px',
+  },
 }));
 
 export default function Contact(props) {
   const classes = styles();
 
   return (
-    <div style={{ backgroundColor: customTheme.colors.background_secondary }}>
+    <div style={{ backgroundColor: '#fff' }}>
       <Container id='contact' className={classes.container}>
-        <div
-          style={{
-            width: '100%',
-            textAlign: 'center',
-            padding: '20px 0px 100px 0px'
-          }}>
-          <Typography variant='h2' className={classes.sectionTitle}>
-            contact
-          </Typography>
-          <div
-            style={{
-              height: '10px',
-              width: '50px',
-              margin: 'auto',
-              backgroundColor: customTheme.colors.primary
-            }}
-          />
-        </div>
+        <SectionTitle title={'contact'} />
         <Paper className={classes.paper}>
           <Typography className={classes.title} variant='h4'>
             Next Steps
@@ -97,15 +71,17 @@ export default function Contact(props) {
           <a
             className={classes.logo}
             href='mailto: juanenriquechavez@outlook.com'
-            target='_blank'>
+            target='_blank'
+          >
             <ion-icon
               name='mail'
               size='large'
               style={{
                 padding: '8px',
                 border: 'solid 1px',
-                borderRadius: '50%'
-              }}></ion-icon>
+                borderRadius: '50%',
+              }}
+            ></ion-icon>
           </a>
         </Paper>
       </Container>

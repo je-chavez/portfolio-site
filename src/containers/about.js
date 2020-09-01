@@ -7,165 +7,180 @@ import {
   Paper,
   Divider,
   Grid,
-  Hidden
+  Hidden,
 } from '@material-ui/core';
+import SectionTitle from '../components/sectionTitle';
+import SkillBar from '../components/skillBar';
 import BubbleText from '../components/bubbleText';
 
-const styles = makeStyles(theme => ({
-  paper: {
-    width: '300px',
-    textAlign: 'center',
-    padding: '20px',
-    [theme.breakpoints.up('sm')]: {
-      width: '530px',
-      height: '440px'
-    }
-  },
-  secondPaper: {
-    width: '300px',
-    textAlign: 'center',
-    padding: '20px',
-    height: '580px',
-    [theme.breakpoints.up('sm')]: {
-      width: '530px',
-      height: '440px'
-    }
-  },
-  container: {
-    padding: '100px 0px 0px 0px',
-    display: 'block',
-    [theme.breakpoints.up('sm')]: {
-      padding: '100px 0px 60px 0px',
-    }
-  },
-  image: {
-    maxWidth: '200px',
-    borderRadius: '50%'
-  },
-  ul: {
-    columnCount: 2
+const styles = makeStyles((theme) => ({
+  divStyle: {
+    backgroundColor: '#fff',
+    paddingBottom: '100px',
+    paddingTop: '50px',
   },
   grid: {
-    padding: '0px 0px 150px 0px',
-    margin: '0px'
+    height: '100%',
+    marginTop: '30px',
+    width: '100%',
   },
-  spacer: {
-    height: '10%'
+  gridItem: {
+    alignContent: 'center',
+    justifyContent: 'center',
   },
-  sectionTitle: {
-    fontWeight: 400,
-    padding: '10px',
-    fontFamily: customTheme.fontStyle,
-    color: customTheme.colors.font_onBackground_secondary,
-    fontSize: '50px',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '60px'
-    }
+  iconText: {
+    textAlign: 'center',
+    fontSize: '24px',
   },
-  descriptionFont: {
-    padding: '20px',
-    fontFamily: customTheme.fontStyle,
-    fontSize: '18px',
-    color: customTheme.colors.font_onBackground_secondary
+  profileImg: {
+    width: '300px',
+    borderRadius: '50%',
+    border: 'solid',
+    borderColor: customTheme.colors.primary,
+    borderWidth: '4px',
   },
-  sectionFont: {
-    padding: '20px',
-    fontFamily: customTheme.fontStyle,
-    color: customTheme.colors.font_onBackground_secondary,
-    paddingBottom: '40px',
-    fontSize: '30px',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '36px'
-    }
-  }
 }));
 
 export default function About(props) {
   const classes = styles();
 
   return (
-    <div style={{ backgroundColor: customTheme.colors.background_secondary }}>
-      <Container id='about' className={classes.container}>
-        <div
-          style={{
-            width: '100%',
-            textAlign: 'center',
-            padding: '20px 0px 100px 0px'
-          }}>
-          <Typography variant='h2' className={classes.sectionTitle}>
-            about
-          </Typography>
-          <div
-            style={{
-              height: '10px',
-              width: '50px',
-              margin: 'auto',
-              backgroundColor: customTheme.colors.primary
-            }}
-          />
-        </div>
-
+    <div id='about' style={{ backgroundColor: '#fff', width: '100%' }}>
+      <Container className={classes.divStyle}>
+        <SectionTitle title={'about'} id='about' />
         <Grid
-          justify='center'
-          alignItems='center'
+          justify='space-around'
           className={classes.grid}
           container
-          direction='row'>
-          <Grid item style={{ padding: '30px' }}>
-            <Paper className={classes.paper}>
-              <img
-                className={classes.image}
-                style={{ padding: '20px' }}
-                src='/assets/profile.jpg'
+          direction='row'
+          spacing={5}
+          style={{ paddingBottom: '50px' }}
+        >
+          <Grid
+            item
+            style={{
+              'text-align': 'center',
+            }}
+          >
+            <ion-icon
+              name='construct'
+              style={{
+                'font-size': '60px',
+                fill: customTheme.colors.primary,
+                border: 'solid',
+                borderWidth: '4px',
+                borderColor: customTheme.colors.surface,
+                borderRadius: '50px',
+                padding: '10px',
+              }}
+            />
+            <Typography className={classes.iconText}>Techie</Typography>
+          </Grid>
+          <Grid item style={{ 'text-align': 'center' }}>
+            <ion-icon
+              name='game-controller'
+              style={{
+                'font-size': '60px',
+                color: customTheme.colors.primary,
+                border: 'solid',
+                borderWidth: '4px',
+                borderColor: customTheme.colors.surface,
+                borderRadius: '50px',
+                padding: '10px',
+              }}
+            />
+            <Typography className={classes.iconText}>Gamer</Typography>
+          </Grid>
+          <Grid item style={{ 'text-align': 'center' }}>
+            <ion-icon
+              name='camera'
+              style={{
+                'font-size': '60px',
+                color: customTheme.colors.primary,
+                border: 'solid',
+                borderWidth: '4px',
+                borderColor: customTheme.colors.surface,
+                borderRadius: '50px',
+                padding: '10px',
+              }}
+            />
+            <Typography className={classes.iconText}>Photographer</Typography>
+          </Grid>
+          <Grid item style={{ 'text-align': 'center' }}>
+            <span style={{ color: customTheme.colors.primary }}>
+              <ion-icon
+                name='navigate'
+                style={{
+                  'font-size': '60px',
+                  border: 'solid',
+                  borderWidth: '4px',
+                  borderColor: customTheme.colors.surface,
+                  borderRadius: '50px',
+                  padding: '10px',
+                }}
               />
-              <Divider style={{ width: '25%', margin: 'auto' }} />
-
-              <Typography variant='body1' className={classes.descriptionFont}>
+            </span>
+            <Typography className={classes.iconText}>Traveler</Typography>
+          </Grid>
+        </Grid>
+        <Grid
+          justify='space-between'
+          className={classes.grid}
+          container
+          direction='row'
+        >
+          <Grid item style={{ textAlign: 'center', maxWidth: '40%' }}>
+            <img className={classes.profileImg} src='/assets/profile.jpg' />
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '10px',
+              }}
+            >
+              <ion-icon
+                name='location-outline'
+                style={{
+                  'font-size': '22px',
+                  paddingRight: '5px',
+                  paddingBottom: '2px',
+                }}
+              />
+              <Typography
+                style={{
+                  textAlign: 'center',
+                  display: 'inline-block',
+                  fontSize: '16px',
+                }}
+              >
+                Seattle, WA
+              </Typography>
+            </div>
+            <Divider />
+            <div style={{ marginTop: 10 }}>
+              <Typography>
                 Hi! I'm a Full-Stack Developer based in the Silicon Valley. I'm
                 an entrepreneur at heart, and love coming up with and working on
-                new ideas! My main focus as of recent has been full-stack mobile
-                development, but I'm always eager to learn about new
-                technologies.
+                new ideas!
               </Typography>
-            </Paper>
+            </div>
           </Grid>
-          <Grid item>
-            <Paper className={classes.secondPaper}>
-              <Typography variant='h4' className={classes.sectionFont}>
-                Things I'm Familiar With
-              </Typography>
-              <Divider style={{ width: '25%', margin: 'auto' }} />
-              <div
-                style={{
-                  position: 'relative',
-                  top: '35%',
-                  transform: 'translateY(-50%)',
-                  paddingRight: '20px',
-                  paddingLeft: '20px'
-                }}>
-                <div>
-                  <BubbleText text='C#' />
-                  <BubbleText text='Swift' />
-                  <BubbleText text='Node.js' />
-                </div>
-                <div>
-                  <BubbleText text='JavaScript' />
-                  <BubbleText text='Microsoft Azure' />
-                  <BubbleText text='React Native' />
-                </div>
-                <div>
-                  <BubbleText text='MongoDB' />
-                  <BubbleText text='Kubernetes' />
-                  <BubbleText text='Express' />
-                  <BubbleText text='Java' />
-                </div>
-                <div>
-                  <BubbleText text='ReactJS' />
-                  <BubbleText text='Docker' />
-                  <BubbleText text='Xamarin' />
-                </div>
-              </div>
-            </Paper>
+          <Grid item style={{ textAlign: 'center', width: '40%' }}>
+            <SkillBar skillName='JavaScript' percentage='85%' />
+            <SkillBar skillName='Node.js' percentage='80%' />
+            <SkillBar skillName='React Native' percentage='60%' />
+            <SkillBar skillName='ReactJS' percentage='20%' />
+            <SkillBar skillName='Flutter' percentage='20%' />
+            <SkillBar skillName='Xamarin' percentage='50%' />
+            <div style={{ marginTop: '20px' }}>
+              <BubbleText text='Friendly' />
+              <BubbleText text='Energetic' />
+              <BubbleText text='Collaborative' />
+              <BubbleText text='Quick learner' />
+              <BubbleText text='Critical Thinker' />
+              <BubbleText text='Proactive' />
+            </div>
           </Grid>
         </Grid>
       </Container>
