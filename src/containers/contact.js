@@ -71,8 +71,7 @@ export default function Contact(props) {
           <a
             className={classes.logo}
             href='mailto: juanenriquechavez@outlook.com'
-            target='_blank'
-          >
+            target='_blank'>
             <ion-icon
               name='mail'
               size='large'
@@ -80,8 +79,7 @@ export default function Contact(props) {
                 padding: '8px',
                 border: 'solid 1px',
                 borderRadius: '50%',
-              }}
-            ></ion-icon>
+              }}></ion-icon>
           </a>
         </Paper>
       </Container>
