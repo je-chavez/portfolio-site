@@ -1,20 +1,14 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
-import {
-  Container,
-  Typography,
-  Paper,
-  Divider,
-  Grid,
-  Hidden,
-} from '@material-ui/core';
-import SectionTitle from '../components/sectionTitle';
-import SkillBar from '../components/skillBar';
-import BubbleText from '../components/bubbleText';
+import { Container, Typography, Divider, Grid } from '@material-ui/core';
+import SectionTitle from '../components/shared/sectionTitle';
+import SkillBar from '../components/about/skillBar';
+import BubbleText from '../components/about/bubbleText';
 
 const styles = makeStyles((theme) => ({
-  divStyle: {
+  divStyle: { backgroundColor: '#fff', width: '100%' },
+  containerStyle: {
     backgroundColor: '#fff',
     paddingBottom: '100px',
     paddingTop: '50px',
@@ -23,14 +17,35 @@ const styles = makeStyles((theme) => ({
     height: '100%',
     marginTop: '30px',
     width: '100%',
+    paddingBottom: '50px',
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: '0px',
+    },
+    textAlign: 'center',
+    margin: 0,
   },
   gridItem: {
-    alignContent: 'center',
-    justifyContent: 'center',
+    textAlign: 'center',
+    [theme.breakpoints.up('sm')]: {
+      width: '40%',
+    },
   },
   iconText: {
     textAlign: 'center',
-    fontSize: '24px',
+    fontSize: '20px',
+    fontFamily: customTheme.fontStyle,
+    color: customTheme.colors.font_onBackground_secondary,
+  },
+  aboutText: {
+    fontSize: '16px',
+    fontFamily: customTheme.fontStyle,
+    color: customTheme.colors.font_onBackground_secondary,
+  },
+  aboutDiv: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '10px',
   },
   profileImg: {
     width: '300px',
@@ -38,6 +53,10 @@ const styles = makeStyles((theme) => ({
     border: 'solid',
     borderColor: customTheme.colors.primary,
     borderWidth: '4px',
+    [theme.breakpoints.down('sm')]: {
+      width: '250px',
+      marginBottom: '20px',
+    },
   },
 }));
 
@@ -45,78 +64,59 @@ export default function About(props) {
   const classes = styles();
 
   return (
-    <div id='about' style={{ backgroundColor: '#fff', width: '100%' }}>
-      <Container className={classes.divStyle}>
+    <div id='about' className={classes.divStyle}>
+      <Container className={classes.containerStyle}>
         <SectionTitle title={'about'} id='about' />
         <Grid
-          justify='space-around'
+          justify='space-evenly'
           className={classes.grid}
           container
           direction='row'
-          spacing={5}
-          style={{ paddingBottom: '50px' }}
+          spacing={3}
         >
-          <Grid
-            item
-            style={{
-              'text-align': 'center',
-            }}
-          >
+          <Grid item>
             <ion-icon
               name='construct'
               style={{
-                'font-size': '60px',
-                fill: customTheme.colors.primary,
+                'font-size': '50px',
+                color: customTheme.colors.primary,
                 border: 'solid',
                 borderWidth: '4px',
                 borderColor: customTheme.colors.surface,
                 borderRadius: '50px',
-                padding: '10px',
+                padding: '15px',
               }}
             />
             <Typography className={classes.iconText}>Techie</Typography>
           </Grid>
-          <Grid item style={{ 'text-align': 'center' }}>
+          <Grid item>
             <ion-icon
               name='game-controller'
               style={{
-                'font-size': '60px',
+                'font-size': '50px',
                 color: customTheme.colors.primary,
                 border: 'solid',
                 borderWidth: '4px',
                 borderColor: customTheme.colors.surface,
                 borderRadius: '50px',
-                padding: '10px',
+                padding: '15px',
               }}
             />
             <Typography className={classes.iconText}>Gamer</Typography>
           </Grid>
-          <Grid item style={{ 'text-align': 'center' }}>
-            <ion-icon
-              name='camera'
-              style={{
-                'font-size': '60px',
-                color: customTheme.colors.primary,
-                border: 'solid',
-                borderWidth: '4px',
-                borderColor: customTheme.colors.surface,
-                borderRadius: '50px',
-                padding: '10px',
-              }}
-            />
-            <Typography className={classes.iconText}>Photographer</Typography>
-          </Grid>
-          <Grid item style={{ 'text-align': 'center' }}>
+
+          <Grid item>
             <span style={{ color: customTheme.colors.primary }}>
               <ion-icon
                 name='navigate'
                 style={{
-                  'font-size': '60px',
+                  'font-size': '50px',
+                  color: customTheme.colors.primary,
                   border: 'solid',
                   borderWidth: '4px',
                   borderColor: customTheme.colors.surface,
                   borderRadius: '50px',
-                  padding: '10px',
+                  padding: '15px',
                 }}
               />
             </span>
@@ -129,16 +129,9 @@ export default function About(props) {
           container
           direction='row'
         >
-          <Grid item style={{ textAlign: 'center', maxWidth: '40%' }}>
+          <Grid item className={classes.gridItem}>
             <img className={classes.profileImg} src='/assets/profile.jpg' />
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '10px',
-              }}
-            >
+            <div className={classes.aboutDiv}>
               <ion-icon
                 name='location-outline'
                 style={{
@@ -147,26 +140,19 @@ export default function About(props) {
                   paddingBottom: '2px',
                 }}
               />
-              <Typography
-                style={{
-                  textAlign: 'center',
-                  display: 'inline-block',
-                  fontSize: '16px',
-                }}
-              >
-                Seattle, WA
-              </Typography>
+              <Typography className={classes.aboutText}>Seattle, WA</Typography>
             </div>
-            <Divider />
-            <div style={{ marginTop: 10 }}>
-              <Typography>
-                Hi! I'm a Full-Stack Developer based in the Silicon Valley. I'm
-                an entrepreneur at heart, and love coming up with and working on
-                new ideas!
-              </Typography>
-            </div>
+            <Divider style={{ marginBottom: 10 }} />
+            <Typography
+              className={classes.aboutText}
+              style={{ paddingBottom: '10px' }}
+            >
+              This is where my killer statement is going to go, I think.
+              Something about who I am, what I want to do and what my next steps
+              are. Huehuheuehuehue.
+            </Typography>
           </Grid>
-          <Grid item style={{ textAlign: 'center', width: '40%' }}>
+          <Grid item className={classes.gridItem}>
             <SkillBar skillName='JavaScript' percentage='85%' />
             <SkillBar skillName='Node.js' percentage='80%' />
             <SkillBar skillName='React Native' percentage='60%' />
@@ -178,8 +164,10 @@ export default function About(props) {
               <BubbleText text='Energetic' />
               <BubbleText text='Collaborative' />
               <BubbleText text='Quick learner' />
-              <BubbleText text='Critical Thinker' />
+              <BubbleText text='Adaptable' />
               <BubbleText text='Proactive' />
+              <BubbleText text='Flexible' />
+              <BubbleText text='Logical' />
             </div>
           </Grid>
         </Grid>

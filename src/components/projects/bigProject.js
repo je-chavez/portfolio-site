@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import customTheme from '../theme/theme';
+import customTheme from '../../theme/theme';
 import { Typography, Paper, Divider, Grid, Hidden } from '@material-ui/core';
 import ToolText from './toolText';
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles((theme) => ({
   paper: {
     backgroundColor: '#fff',
     width: '300px',
@@ -13,8 +13,8 @@ const styles = makeStyles(theme => ({
     padding: '20px',
     [theme.breakpoints.up('sm')]: {
       width: '500px',
-      height: '350px'
-    }
+      height: '350px',
+    },
   },
   projectTitle: {
     fontFamily: customTheme.fontStyle,
@@ -22,8 +22,8 @@ const styles = makeStyles(theme => ({
     color: customTheme.colors.font_onBackground_secondary,
     fontSize: '30px',
     [theme.breakpoints.up('sm')]: {
-      fontSize: '36px'
-    }
+      fontSize: '36px',
+    },
   },
   projectDescription: {
     fontFamily: customTheme.fontStyle,
@@ -31,27 +31,27 @@ const styles = makeStyles(theme => ({
     color: customTheme.colors.font_onBackground_secondary,
     fontSize: '18px',
     [theme.breakpoints.up('sm')]: {
-      fontSize: '18px'
-    }
+      fontSize: '18px',
+    },
   },
   logo: {
     textDecoration: 'none',
     color: customTheme.colors.background,
     '&:hover': {
-      color: customTheme.colors.primary
-    }
+      color: customTheme.colors.primary,
+    },
   },
   projectImage: {
     maxHeight: '400px',
-    width: '210px'
+    width: '210px',
   },
   secondProjectImage: {
     maxHeight: '400px',
     width: '210px',
     display: 'none',
     [theme.breakpoints.up('lg')]: {
-      display: 'block'
-    }
+      display: 'block',
+    },
   },
   gridItem: {
     display: 'block',
@@ -59,9 +59,9 @@ const styles = makeStyles(theme => ({
     textAlign: 'center',
     [theme.breakpoints.up('lg')]: {
       display: 'block',
-      width: 'auto'
-    }
-  }
+      width: 'auto',
+    },
+  },
 }));
 
 export default function SmallProject(props) {
@@ -73,7 +73,7 @@ export default function SmallProject(props) {
     githubLink,
     websiteLink,
     primaryImage,
-    secondaryImage
+    secondaryImage,
   } = props;
 
   let logo = () => {
@@ -83,7 +83,8 @@ export default function SmallProject(props) {
           <ion-icon
             name='logo-github'
             size='large'
-            style={{ padding: '20px' }}></ion-icon>
+            style={{ padding: '20px' }}
+          ></ion-icon>
         </a>
       );
     } else if (websiteLink) {
@@ -92,7 +93,8 @@ export default function SmallProject(props) {
           <ion-icon
             name='globe'
             size='large'
-            style={{ padding: '20px' }}></ion-icon>
+            style={{ padding: '20px' }}
+          ></ion-icon>
         </a>
       );
     }
@@ -106,7 +108,8 @@ export default function SmallProject(props) {
       className={classes.grid}
       container
       direction='row'
-      spacing={5}>
+      spacing={5}
+    >
       <Grid item>
         <Paper className={classes.paper}>
           <Typography className={classes.projectTitle} variant='h4'>

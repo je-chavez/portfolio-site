@@ -1,11 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import customTheme from '../theme/theme';
+import customTheme from '../../theme/theme';
 import { Typography } from '@material-ui/core';
 
 const styles = makeStyles({
   text: {
-    fontFamily: customTheme.fontStyle
+    fontFamily: customTheme.fontStyle,
   },
   container: {
     padding: '5px',
@@ -13,8 +13,8 @@ const styles = makeStyles({
     borderColor: customTheme.colors.primary,
     display: 'inline-block',
     margin: '5px',
-    borderRadius: '15px'
-  }
+    borderRadius: '15px',
+  },
 });
 
 export default function ToolText(props) {

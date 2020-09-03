@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import customTheme from '../theme/theme';
 import { Container, Typography, Paper } from '@material-ui/core';
-import SectionTitle from '../components/sectionTitle';
+import SectionTitle from '../components/shared/sectionTitle';
 
 const styles = makeStyles((theme) => ({
   container: {

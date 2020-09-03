@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import customTheme from '../theme/theme';
+import customTheme from '../../theme/theme';
 import { Typography, Paper, Divider, Grid } from '@material-ui/core';
 import ToolText from './toolText';
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles((theme) => ({
   paper: {
     backgroundColor: '#fff',
     width: '300px',
@@ -13,8 +13,8 @@ const styles = makeStyles(theme => ({
     padding: '20px',
     [theme.breakpoints.up('sm')]: {
       width: '350px',
-      height: '320px'
-    }
+      height: '320px',
+    },
   },
   projectTitle: {
     fontFamily: customTheme.fontStyle,
@@ -22,22 +22,22 @@ const styles = makeStyles(theme => ({
     fontSize: '30px',
     color: customTheme.colors.font_onBackground_secondary,
     [theme.breakpoints.up('sm')]: {
-      fontSize: '36px'
-    }
+      fontSize: '36px',
+    },
   },
   projectDescription: {
     fontFamily: customTheme.fontStyle,
     textAlign: 'center',
     color: customTheme.colors.font_onBackground_secondary,
-    fontSize: '18px'
+    fontSize: '18px',
   },
   logo: {
     textDecoration: 'none',
     color: customTheme.colors.background,
     '&:hover': {
-      color: customTheme.colors.primary
-    }
-  }
+      color: customTheme.colors.primary,
+    },
+  },
 }));
 
 export default function SmallProject(props) {
@@ -65,7 +65,8 @@ export default function SmallProject(props) {
         <ion-icon
           name='logo-github'
           size='large'
-          style={{ padding: '20px' }}></ion-icon>
+          style={{ padding: '20px' }}
+        ></ion-icon>
       </a>
     </Paper>
   );

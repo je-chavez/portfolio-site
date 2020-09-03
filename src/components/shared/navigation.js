@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import customTheme from '../theme/theme.js';
+import customTheme from '../../theme/theme.js';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Navbar } from 'react-bootstrap';
@@ -54,7 +54,7 @@ export default function ResponsiveNavigation(props) {
         <AnchorLink className={classes.anchor} href='#about'>
           <p className={classes.listItemText}>about</p>
         </AnchorLink>
-        <AnchorLink className={classes.anchor} href='#projects' offset={70}>
+        <AnchorLink className={classes.anchor} href='#projects' offset={0}>
           <p className={classes.listItemText}>projects</p>
         </AnchorLink>
         <AnchorLink className={classes.anchor} href='#contact' offset={-40}>

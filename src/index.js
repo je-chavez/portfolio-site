@@ -6,14 +6,14 @@ import Projects from './containers/projects';
 import customTheme from './theme/theme';
 import { Grid } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './components/navigation';
+import Navigation from './components/shared/navigation';
 import Footer from './containers/footer';
 import Contact from './containers/contact';
 
 const divStyle = {
   backgroundColor: customTheme.colors.background,
   padding: '0px',
-  margin: '0px'
+  margin: '0px',
 };
 
 ReactDOM.render(
@@ -31,7 +31,7 @@ ReactDOM.render(
         <Contact />
       </Grid>
     </Grid>
-    <Footer/>
+    <Footer />
   </div>,
   document.getElementById('root')
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import customTheme from '../theme/theme';
+import customTheme from '../../theme/theme';
 
 const styles = makeStyles((theme) => ({
   outerBar: {
@@ -17,7 +17,7 @@ const styles = makeStyles((theme) => ({
     borderRadius: '10px',
     fontFamily: customTheme.fontStyle,
     color: '#fff',
-    fontSize: '18px',
+    fontSize: '16px',
   },
 }));
 

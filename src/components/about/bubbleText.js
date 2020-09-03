@@ -1,16 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import customTheme from '../theme/theme';
+import customTheme from '../../theme/theme';
 import { Typography } from '@material-ui/core';
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles((theme) => ({
   buttonFont: {
     fontFamily: customTheme.fontStyle,
     color: '#fff',
-    fontSize: '14px',
+    fontSize: '16px',
     [theme.breakpoints.up('sm')]: {
-      fontSize: '18px'
-    }
+      fontSize: '16px',
+    },
   },
   divStyle: {
     backgroundColor: customTheme.colors.primary,
@@ -20,9 +20,9 @@ const styles = makeStyles(theme => ({
     margin: '5px',
     minWidth: '50px',
     [theme.breakpoints.up('sm')]: {
-      padding: '10px'
-    }
-  }
+      padding: '10px',
+    },
+  },
 }));
 export default function BubbleText(props) {
   const { text } = props;

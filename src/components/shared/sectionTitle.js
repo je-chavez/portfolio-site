@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import customTheme from '../theme/theme';
+import customTheme from '../../theme/theme';
 import { Typography } from '@material-ui/core';
 
 const styles = makeStyles((theme) => ({
